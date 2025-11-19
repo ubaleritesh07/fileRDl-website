@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RDL Genuine Parts</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            height: 60vh;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5),  /* top black gradient (50% opacity) */rgba(0, 0, 0, 0.5)   /* bottom black gradient (50% opacity) */),
+            url("/images/AboutImage.jpg"); /* 🔹 replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        
+        .about-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .about-section {
+            padding: 80px 20px;
+        }
+        
+        .about-content {
+            
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .company-intro {
+            background: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            border-left: 5px solid var(--primary-red);
+        }
+        
+        .company-intro h2 {
+            color: var(--primary-red);
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .company-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-text {
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+        
+        .values-section {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            margin: 60px 0;
+            background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),  /* top black gradient (50% opacity) */
+            rgba(0, 0, 0, 0.5)   /* bottom black gradient (50% opacity) */
+        ),
+        url("/images/about.jpg"); /* 🔹 replace with your image path */
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .timeline {
+            padding: 60px 0;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 20fr 120px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 10px 30px rgba(193, 39, 45, 0.2);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:hover {
+            transform: translateX(10px);
+        }
+        
+        .timeline-dot {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-red), var(--light-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 24px;
+            box-shadow: 0 5px 20px rgba(193, 39, 45, 0.4);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-red);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .timeline-item:nth-child(even) {
+            grid-template-columns: 1fr 80px 1fr;
+            direction: rtl;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            direction: ltr;
+        }
+        
+        .strength-section {
+            background: var(--off-white);
+            padding: 80px 20px;
+        }
+        
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .strength-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-red);
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(193, 39, 45, 0.3);
+        }
+        
+        .strength-number {
+            font-size: 42px;
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .strength-card h3 {
+            color: var(--dark-gray);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .strength-card p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 36px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            
+            .timeline-dot {
+                width: 60px;
+                height: 60px;
+                font-size: 18px;
+                margin: 0 auto;
+            }
+        }
+        /* =========================================
+   ABOUT PAGE – RESPONSIVE ENHANCEMENTS
+   Breakpoints: 1200, 992, 768, 600, 480, 360
+   Paste at the END of your CSS
+   ========================================= */
+
+/* ---- Global tuners (safe for all sections) ---- */
+@media (max-width: 1200px) {
+  .container { max-width: 100%; padding: 0 18px; }
+  .section-title { font-size: clamp(26px, 3vw, 34px); }
+}
+
+@media (max-width: 992px) {
+  .about-section,
+  .values-section,
+  .strength-section { padding: 70px 18px; }
+}
+
+/* ---- Hero: readable & nicely cropped on mobile ---- */
+@media (max-width: 768px) {
+  .about-hero { height: 56vh; background-position: center 20%; }
+  .about-hero h1 { font-size: clamp(28px, 6vw, 36px); margin-bottom: 12px; }
+  .about-hero p  { font-size: 16px; line-height: 1.6; }
+}
+
+@media (max-width: 480px) {
+  .about-hero { height: 52vh; background-position: center 18%; }
+  .about-hero-content { padding: 14px; }
+  .about-hero h1 { font-size: 26px; }
+  .about-hero p  { font-size: 15px; }
+}
+
+/* ---- Company intro card: reduce width & line length ---- */
+@media (max-width: 992px) {
+  .company-intro {
+    padding: 40px 28px;
+    margin-bottom: 44px;
+    border-radius: 16px;
+  }
+  .company-intro h2 { font-size: 30px; margin-bottom: 18px; }
+  .company-intro p  {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 70ch;   /* comfortable reading length */
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .company-intro { padding: 26px 18px; }
+  .company-intro h2 { font-size: 24px; }
+  .company-intro p  { font-size: 15px; }
+}
+
+/* ---- Values (Mission/Vision/Values) section ---- */
+@media (max-width: 992px) {
+  .values-grid {
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 36px;
+  }
+  .value-card { padding: 28px; border-radius: 14px; }
+  .value-icon { font-size: 40px; margin-bottom: 14px; }
+  .value-card h3 { font-size: 20px; margin-bottom: 10px; }
+  .value-card p  { font-size: 15px; line-height: 1.7; }
+}
+
+@media (max-width: 600px) {
+  .values-section { padding: 56px 16px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .value-card { padding: 22px 16px; }
+  .value-icon { font-size: 34px; }
+  .value-card h3 { font-size: 18px; }
+  .value-card p  { font-size: 14.5px; }
+}
+
+/* ---- Timeline: stack items and keep dots centered ---- */
+@media (max-width: 992px) {
+  .timeline { padding: 40px 0; }
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 16px;
+    margin-bottom: 34px;
+  }
+  .timeline-content {
+    padding: 22px 18px;
+    border-radius: 12px;
+  }
+  .timeline-content h3 { font-size: 18px; margin-bottom: 8px; }
+  .timeline-content p  { font-size: 15px; line-height: 1.7; }
+  .timeline-dot {
+    width: 56px; height: 56px; font-size: 18px;
+    margin: 0 auto 6px;
+  }
+}
+@media (max-width: 480px) {
+  .timeline-content { padding: 18px 14px; }
+  .timeline-dot { width: 50px; height: 50px; font-size: 16px; }
+}
+
+/* ---- Strength grid cards ---- */
+@media (max-width: 992px) {
+  .strength-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 36px;
+  }
+  .strength-card { padding: 26px 20px; border-radius: 14px; }
+  .strength-number { font-size: 34px; margin-bottom: 10px; }
+  .strength-card h3 { font-size: 17px; }
+  .strength-card p  { font-size: 14.5px; }
+}
+@media (max-width: 600px) {
+  .strength-grid   { grid-template-columns: 1fr; gap: 16px; }
+  .strength-card   { padding: 20px 16px; }
+  .strength-number { font-size: 30px; }
+  .strength-card h3{ font-size: 16px; }
+  .strength-card p { font-size: 14px; }
+}
+
+/* ---- Footer: 2-cols on tablet, 1-col on phones, centered ---- */
+@media (max-width: 768px) {
+  .footer { padding: 54px 16px 16px; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-col h4 { font-size: 18px; margin-bottom: 12px; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-logo-img { width: 160px; height: 64px; }
+  .footer-bottom { margin-top: 10px; font-size: 14px; line-height: 1.6; }
+}
+@media (max-width: 520px) {
+  .footer { padding: 44px 14px 14px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 18px; text-align: center; }
+  .footer-col, .footer-logo { display: flex; flex-direction: column; align-items: center; }
+  .footer-col h4 { font-size: 16px; margin-bottom: 8px; }
+  .footer-col ul { padding: 0; }
+  .footer-col ul li { margin-bottom: 6px; }
+  .company-name { margin-top: 8px; }
+}
+@media (max-width: 380px) {
+  .footer-logo-img { width: 140px; height: 56px; }
+  .footer-bottom    { font-size: 13px; }
+}
+
+/* ---- Navbar: safe tap targets on small screens ---- */
+@media (max-width: 768px) {
+  .nav-container { height: 74px; }
+  .nav-menu a { padding: 14px 18px; font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .nav-container { height: 70px; }
+  .nav-menu a { padding: 13px 16px; font-size: 14.5px; }
+}
+
+/* ---- Micro polish for tiny screens ---- */
+@media (max-width: 360px) {
+  .about-hero { height: 50vh; }
+  .about-hero h1 { font-size: 22px; }
+  .about-hero p  { font-size: 14px; }
+  .company-intro p,
+  .value-card p,
+  .timeline-content p,
+  .strength-card p { font-size: 14px; }
+}
+
+/* ---- Accessibility: reduce motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo Section -->
+                <a href="#home" class="logo-link">
+                    <div class="logo-circle"></div>
+                    <div class="logo-text">
+                        <div class="logo-title">RDL Genuine Parts</div>
+                        <div class="logo-subtitle">Two-Wheeler Fiber Components</div>
+                    </div>
+                </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>About RDL</h1>
+            <p>14 Years of Excellence in Manufacturing Premium Motorcycle Parts</p>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="company-intro">
+                    <h2>Who We Are</h2>
+                    <p>We are New Shivkrupa Automobiles, manufacturers of high-quality
+                        <span class="highlight-text">two-wheeler ABS fiber body parts</span>under the brand 
+                        <span class="highlight-text">RDL Genuine Parts.</span>Founded by
+                        <span class="highlight-text">Mr. Dinesh B. Londhe</span>, a skilled mechanic turned entrepreneur, the company began its journey from a small workshop in Kurduwadiwhich still operates today.
+
+                    </p>
+                    <p>
+                        Now an <span class="highlight-text">ISO 9001:2015 certified organization</span>,we are committed to maintaining quality, trust, and innovation in every product. With complete in-house facilities, we ensure consistent performance and durability from moulding to final packing.
+
+                    </p>
+                    <p>
+                        We also produce our own corrugated boxes and LD bags, and operate a self-owned logistics system that enables fast and reliable delivery across Maharashtra, Karnataka, Telangana, and all over India.Backed by years of experience and strong family values, Team RDL continues to deliver precisely finished and mechanic-friendly products trusted nationwide.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Corporate Code of Conduct</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Our Vision</h3>
+                    <p>To deliver world-class two-wheeler body parts through advanced technology, superior quality, and continuous innovation, ensuring global competitiveness.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Our Mission</h3>
+                    <p>To build trust and value by manufacturing reliable, precisely finished products that give our customers a competitive edge in the market.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💎</div>
+                    <h3>Our Values</h3>
+                    <p>
+                    We believe in quality, integrity, and customer satisfaction — ensuring a safe workplace, sustainable practices, and a culture driven by excellence and innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- founder -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="company-intro">
+                    <h2>THE FOUNDER : MR.DINESH LONDHE</h2>
+                    <p>The story of
+                        <span class="highlight-text">New Shivkrupa Automobiles </span>begins with 
+                        <span class="highlight-text">Mr. Dinesh B. Londhe, a passionate mechanic</span> from Kurduwadi, who started a small two-wheeler garage in 1999. His dedication, skill, and honesty soon earned him the trust of customers and mechanics across the region.
+
+                        With a vision to deliver the same workshop-level precision on a larger scale, he founded the RDL brand in 2013, beginning as a trader of two-wheeler fiber parts. Over time, his commitment to quality transformed RDL into a respected manufacturing brand trusted across India.
+
+                    </p>
+                    <p>
+                        Now at 46 years of age,  <span class="highlight-text">Mr. Londhe</span> continues to guide the company with his deep technical knowledge and values of quality, discipline, and innovation. Under his leadership,<span class="highlight-text">RDL</span> has grown into an <span class="highlight-text">ISO 9001:2015 certified manufacturer</span> with complete in-house facilities — symbolizing his journey from a small Kurduwadi garage to a nationwide trusted name
+                    </p>
+                    <p>
+                        We also produce our own corrugated boxes and LD bags, and operate a self-owned logistics system that enables fast and reliable delivery across Maharashtra, Karnataka, Telangana, and all over India.Backed by years of experience and strong family values, Team RDL continues to deliver precisely finished and mechanic-friendly products trusted nationwide.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Strength -->
+    <section class="strength-section">
+        <div class="container">
+            <h2 class="section-title">Our Strength</h2>
+            <div class="strength-grid">
+                <div class="strength-card">
+                    <div class="strength-number">01</div>
+                    <h3>State of Art Plant & Machinery</h3>
+                    <p>Advanced manufacturing facility equipped with latest technology</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">02</div>
+                    <h3>Imported Dies/Moulds</h3>
+                    <p>High-precision imported tooling for superior product quality</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">03</div>
+                    <h3>All India Marketing Network</h3>
+                    <p>Comprehensive distribution across the country</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">04</div>
+                    <h3>Dust Proof Paint Shop</h3>
+                    <p>Automated conveyorised painting for perfect finish</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">05</div>
+                    <h3>Diversified Manufacturing</h3>
+                    <p>Wide range of products for various bike models</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">06</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous quality control at every production stage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                     <div class="footer-logo">
+                        <img src="images/LOGO RDL.png" alt="RDL Logo" class="footer-logo-img">
+                    </div>
+                    <p>Genuine Fiber Products - Non-Fading & Highly Durable</p>
+                    <p class="company-name">New Shivkrupa Automobiles</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 G.No./H.No. -449/1B, A/p. Chincholi</li>
+                        <li>Tal: Madha, Dist: Solapur</li>
+                        <li>📞 9169919393</li>
+                        <li>✉️ newshivkrupa9850@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Values</h4>
+                    <ul>
+                        <li>✓ Customer Satisfaction</li>
+                        <li>✓ Superior Quality</li>
+                        <li>✓ Environmental Concern</li>
+                        <li>✓ Excellence & Innovation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RDL Genuine Parts. All rights reserved.</p>
+                <p>Manufactured by New Shivkrupa Automobiles</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
