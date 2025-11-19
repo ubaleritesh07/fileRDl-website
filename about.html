@@ -7,19 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .about-hero {
-            height: 60vh;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 70px;
-            position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.5),  /* top black gradient (50% opacity) */rgba(0, 0, 0, 0.5)   /* bottom black gradient (50% opacity) */),
-            url("/images/AboutImage.jpg"); /* 🔹 replace with your image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    height: 60vh;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden; /* keep content inside */
+
+    /* keep background-position/size behaviour preserved by the img */
+}
+
+/* the image placed in HTML acts like background-size: cover */
+.about-hero .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* same as background-size: cover */
+    object-position: center;/* same as background-position: center */
+    z-index: -2;            /* behind the overlay and content */
+}
+
         
         .about-hero-content {
             position: relative;
@@ -462,12 +473,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="about-hero">
-        <div class="about-hero-content">
-            <h1>About RDL</h1>
-            <p>14 Years of Excellence in Manufacturing Premium Motorcycle Parts</p>
-        </div>
-    </section>
+   <section class="about-hero">
+    <!-- background image moved from CSS into HTML -->
+    <img src="/images/AboutImage.jpg" class="bg-img" alt="About background">
+
+    <div class="about-hero-content">
+        <h1>About RDL</h1>
+        <p>14 Years of Excellence in Manufacturing Premium Motorcycle Parts</p>
+    </div>
+</section>
 
     <!-- Company Introduction -->
     <section class="about-section">

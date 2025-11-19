@@ -59,160 +59,159 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 }, { passive: true });
-
 // ========================================
-// HERO SLIDER - AUTO SLIDE EVERY 5 SECONDS
+// HERO SLIDER - (HTML slides already in DOM) - Robust autoplay version
 // ========================================
 let currentSlide = 0;
-let slideInterval;
+let slideInterval = null;
 let isTransitioning = false;
 
-const slideData = [
-    {
-        title: 'RDL GENUINE PARTS',
-        subtitle: 'Premium Quality Motorcycle Components',
-        image: '/images/companyphoto/5th.jpg'
-    },
-    {
-        title: 'NON-FADING EXCELLENCE',
-        subtitle: '14 Years of Manufacturing Premium Parts',
-        image: '/images/marketyard/2nd.jpg'
-    },
-    {
-        title: 'HIGHLY DURABLE PRODUCTS',
-        subtitle: 'State-of-the-Art Manufacturing Facility',
-        image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1920&h=1080&fit=crop'
-    },
-    {
-        title: '500+ DEALER NETWORK',
-        subtitle: 'Trusted Across India - Join Us Today',
-        image: '/images/companyphoto/1st.JPG'
+let slides = [];
+let dots = [];
+let sliderContainer = null;
+let dotsContainer = null;
+const TRANSITION_MS = 1000; // must match your CSS transition duration
+const INTERVAL_MS = 5000;
+
+function collectElementsOnce() {
+    sliderContainer = document.querySelector('.slider-container');
+    if (!sliderContainer) return false;
+
+    // Collect slides from DOM (assumes you already wrote them in HTML)
+    slides = Array.from(sliderContainer.querySelectorAll('.slide'));
+
+    // Try to find a dots container anywhere on the page first,
+    // otherwise create it inside the slider container
+    dotsContainer = document.querySelector('.slider-dots') || null;
+    if (!dotsContainer) {
+        dotsContainer = document.createElement('div');
+        dotsContainer.className = 'slider-dots';
+        sliderContainer.appendChild(dotsContainer);
     }
-];
 
-function createSlides() {
-    const sliderContainer = document.querySelector('.slider-container');
-    if (!sliderContainer) return;
+    // Ensure dots count matches slides
+    if (dotsContainer.children.length !== slides.length) {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => {
+            const d = document.createElement('div');
+            d.className = 'dot';
+            if (i === 0) d.classList.add('active');
+            dotsContainer.appendChild(d);
+        });
+    }
 
-    // Clear existing content
-    sliderContainer.innerHTML = '';
+    dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+    return slides.length > 0;
+}
 
-    // Create slides
-    slideData.forEach((data, index) => {
-        const slide = document.createElement('div');
-        slide.className = 'slide';
-        slide.style.backgroundImage = `url('${data.image}')`;
-        if (index === 0) slide.classList.add('active');
+function ensureInitialActive() {
+    if (!slides.length) return;
+    // If no .active present, mark first slide active
+    if (!slides.some(s => s.classList.contains('active'))) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === 0));
+    }
+    // sync currentSlide with whichever slide is active
+    const activeIndex = slides.findIndex(s => s.classList.contains('active'));
+    currentSlide = activeIndex >= 0 ? activeIndex : 0;
 
-        slide.innerHTML = `
-            <div class="slide-content">
-                <h1>${data.title}</h1>
-                <p>${data.subtitle}</p>
-                <a href="products.html" class="cta-button">Explore Products</a>
-            </div>
-        `;
-
-        sliderContainer.appendChild(slide);
-    });
-
-    // Create dots
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'slider-dots';
-    
-    slideData.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-
-    sliderContainer.appendChild(dotsContainer);
+    // ensure dots reflect active slide
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
 }
 
 function showSlide(index) {
     if (isTransitioning) return;
-    
+    if (!slides.length) return;
+
     isTransitioning = true;
-    const allSlides = document.querySelectorAll('.slide');
-    const allDots = document.querySelectorAll('.dot');
+    // normalize index
+    index = ((index % slides.length) + slides.length) % slides.length;
+    currentSlide = index;
 
-    // Remove active from all
-    allSlides.forEach(slide => slide.classList.remove('active'));
-    allDots.forEach(dot => dot.classList.remove('active'));
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
 
-    // Add active to current
-    if (allSlides[index]) {
-        allSlides[index].classList.add('active');
-    }
-    if (allDots[index]) {
-        allDots[index].classList.add('active');
-    }
-
-    // Allow next transition after animation completes
+    // allow next transition after CSS transition completes
     setTimeout(() => {
         isTransitioning = false;
-    }, 1000);
+    }, TRANSITION_MS);
 }
 
 function nextSlide() {
-    const allSlides = document.querySelectorAll('.slide');
-    currentSlide = (currentSlide + 1) % allSlides.length;
-    showSlide(currentSlide);
+    if (!slides.length) return;
+    showSlide((currentSlide + 1) % slides.length);
 }
 
 function goToSlide(index) {
     if (isTransitioning) return;
-    currentSlide = index;
-    showSlide(currentSlide);
-    // Reset the interval to prevent immediate slide change
-    stopSlider();
-    startSlider();
+    showSlide(index);
+    restartSlider();
 }
 
 function startSlider() {
-    // Clear any existing interval first
     stopSlider();
-    // Start new interval
-    slideInterval = setInterval(nextSlide, 5000);
+    if (!slides.length) return;
+    // small guard: if slider already running do nothing
+    if (slideInterval) return;
+    slideInterval = setInterval(nextSlide, INTERVAL_MS);
+    // optional: trigger first automatic advance after the interval time:
+    // (comment out the next line if you want the first slide to stay until the first interval fires)
+    // setTimeout(nextSlide, INTERVAL_MS);
+    console.log('Slider started (autoplay).');
 }
 
 function stopSlider() {
     if (slideInterval) {
         clearInterval(slideInterval);
         slideInterval = null;
+        console.log('Slider stopped.');
     }
 }
 
-// Initialize slider when DOM is ready
-function initSlider() {
-    const sliderContainer = document.querySelector('.slider-container');
-    if (!sliderContainer) return;
-
-    createSlides();
+function restartSlider() {
+    stopSlider();
     startSlider();
-
-    // Optional: Pause on hover (remove these lines if you want continuous running even on hover)
-    sliderContainer.addEventListener('mouseenter', stopSlider);
-    sliderContainer.addEventListener('mouseleave', startSlider);
 }
 
-// Start slider when page loads
+function attachDotHandlers() {
+    // Remove any previous listeners by cloning nodes to be safe
+    dots.forEach((dot, idx) => {
+        const clone = dot.cloneNode(true);
+        dot.parentNode.replaceChild(clone, dot);
+        clone.addEventListener('click', () => goToSlide(idx));
+    });
+    // refresh dots reference after cloning
+    dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+}
+
+function initSlider() {
+    const ok = collectElementsOnce();
+    if (!ok) {
+        console.warn('No slider-container or slides found in DOM.');
+        return;
+    }
+
+    ensureInitialActive();
+    attachDotHandlers();
+    startSlider();
+
+    // Pause on hover (optional)
+    sliderContainer.addEventListener('mouseenter', stopSlider);
+    sliderContainer.addEventListener('mouseleave', startSlider);
+
+    // Restart autoplay when tab becomes visible again
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) startSlider();
+    });
+}
+
+// Initialize when DOM ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSlider);
 } else {
     initSlider();
 }
 
-// Restart slider if page becomes visible again (when switching tabs)
-document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-        const sliderContainer = document.querySelector('.slider-container');
-        if (sliderContainer) {
-            startSlider();
-        }
-    }
-});
+
 // ========================================
 // SMOOTH SCROLL FOR ANCHOR LINKS
 // ========================================

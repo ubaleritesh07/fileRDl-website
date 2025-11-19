@@ -12,7 +12,9 @@
         <div class="nav-container">
              <!-- Logo Section -->
                 <a href="#home" class="logo-link">
-                    <div class="logo-circle"></div>
+                    <div class="logo-circle">
+                        <img src="/images/LOGO RDL.png" alt="RDL Logo">
+                    </div>
                     <div class="logo-text">
                         <div class="logo-title">RDL Genuine Parts</div>
                         <div class="logo-subtitle">Two-Wheeler Fiber Components</div>
@@ -23,7 +25,7 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Quality</a>
+                    <a href="#" class="dropdown-    toggle">Quality</a>
                     <div class="dropdown-menu">
                         <div class="quality-section">
                             <h4>Material</h4>
@@ -58,10 +60,50 @@
 
     <!-- Hero Slider Section -->
     <section class="hero">
-        <div class="slider-container">
-            <!-- Slides will be dynamically created by JavaScript -->
+    <div class="slider-container">
+
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('/images/companyphoto/5th.jpg');">
+            <div class="slide-content">
+                <h1>RDL GENUINE PARTS</h1>
+                <p>Premium Quality Motorcycle Components</p>
+            </div>
         </div>
-    </section>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('/images/marketyard/2nd.jpg');">
+            <div class="slide-content">
+                <h1>NON-FADING EXCELLENCE</h1>
+                <p>14 Years of Manufacturing Premium Parts</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1920&h=1080&fit=crop');">
+            <div class="slide-content">
+                <h1>HIGHLY DURABLE PRODUCTS</h1>
+                <p>State-of-the-Art Manufacturing Facility</p>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" style="background-image: url('/images/companyphoto/1st.JPG');">
+            <div class="slide-content">
+                <h1>500+ DEALER NETWORK</h1>
+                <p>Trusted Across India - Join Us Today</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Slider Dots -->
+    <div class="slider-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</section>
 
     <!-- Special Products Showcase -->
 <section class="showcase">
@@ -216,13 +258,16 @@
     </section>
     
     <section class="dealer-section">
-        <div class="container">
-            <h2>Become An Authorized Dealer</h2>
-            <p>Join our network of 500+ dealers across India and grow your business with RDL Genuine Parts</p>
-            <a href="dealer-apply.html" class="dealer-btn">Apply Now</a>
-        </div>
-    </section>
+    
+    <!-- background image moved from CSS to HTML -->
+    <img src="/images/dealerinabout.jpg" class="bg-img" alt="Dealer Background">
 
+    <div class="container">
+        <h2>Become An Authorized Dealer</h2>
+        <p>Join our network of 500+ dealers across India and grow your business with RDL Genuine Parts</p>
+        <a href="dealer-apply.html" class="dealer-btn">Apply Now</a>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">

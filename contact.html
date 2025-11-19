@@ -8,22 +8,36 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         .contact-hero {
-            height: 90vh;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
-             background: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.5),  /* top black gradient (50% opacity) */
-            rgba(0, 0, 0, 0.5)   /* bottom black gradient (50% opacity) */
-        ),
-        url("/images/companyphoto/3rd.JPG"); /* 🔹 replace with your image path */
-     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 70px;
-        }
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HTML background image (same as background-size: cover) */
+.contact-hero .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* same as background-size: cover */
+    object-position: center;    /* same as background-position: center */
+    z-index: -2;
+}
+
+/* Dark overlay (same as rgba black gradient you had) */
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* same gradient darkness */
+    z-index: -1;
+}
+
         
         .contact-hero-content {
             text-align: center;
@@ -387,13 +401,17 @@ html { -webkit-text-size-adjust: 100%; }
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="contact-hero">
-        <div class="contact-hero-content">
-            <h1>Contact Us</h1>
-            <p>Get in touch with us for any inquiries</p>
-        </div>
-    </section>
+ <section class="contact-hero">
+
+    <!-- Background image moved from CSS to HTML -->
+    <img src="/images/companyphoto/3rd.JPG" class="bg-img" alt="Contact Background">
+
+    <div class="contact-hero-content">
+        <h1>Contact Us</h1>
+        <p>Get in touch with us for any inquiries</p>
+    </div>
+</section>
+
     
 
     <!-- Contact Section -->
