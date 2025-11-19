@@ -1,6 +1,7 @@
 /* ========================================
-   RDL GENUINE PARTS - ENHANCED STYLES
-   ======================================== */
+   RDL GENUINE PARTS - ENHANCED RESPONSIVE STYLES
+   Optimized for Mobile, Tablet, and Desktop
+======================================== */
 
 * {
     margin: 0;
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
     overflow-x: hidden;
@@ -58,7 +59,8 @@ body {
 
 /* ========================================
    NAVIGATION - WHITE THEME WITH LOGO
-   ======================================== */
+======================================== */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -82,6 +84,7 @@ body {
     align-items: center;
     height: 80px;
 }
+
 .logo-link {
     display: flex;
     align-items: center;
@@ -115,6 +118,7 @@ body {
     object-fit: contain;
     margin-top: 10px;
 }
+
 .logo-circle:hover {
     transform: scale(1.08);
     filter: brightness(1.1);
@@ -234,6 +238,7 @@ body {
     cursor: pointer;
     gap: 5px;
     padding: 5px;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -244,9 +249,22 @@ body {
     border-radius: 2px;
 }
 
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* ========================================
    HERO SLIDER SECTION
-   ======================================== */
+======================================== */
+
 .hero {
     height: 100vh;
     position: relative;
@@ -327,6 +345,8 @@ body {
     font-size: 18px;
     transition: all 0.3s ease;
     box-shadow: 0 5px 20px rgba(193, 39, 45, 0.4);
+    min-height: 44px;
+    min-width: 44px;
 }
 
 .cta-button:hover {
@@ -342,13 +362,13 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 15px;
+    gap: 10px;
     z-index: 3;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: rgba(255,255,255,0.5);
     cursor: pointer;
@@ -356,15 +376,21 @@ body {
     border: 2px solid white;
 }
 
+.dot:hover {
+    background: rgba(255,255,255,0.8);
+    transform: scale(1.2);
+}
+
 .dot.active {
     background: var(--white);
-    width: 40px;
-    border-radius: 6px;
+    width: 30px;
+    border-radius: 5px;
 }
 
 /* ========================================
    ANIMATIONS
-   ======================================== */
+======================================== */
+
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -431,6 +457,18 @@ body {
     }
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
 /* Scroll Animations */
 .animate-on-scroll {
     opacity: 0;
@@ -445,7 +483,8 @@ body {
 
 /* ========================================
    SECTIONS
-   ======================================== */
+======================================== */
+
 .section-title {
     text-align: center;
     font-size: 42px;
@@ -496,11 +535,10 @@ body {
     border-color: var(--primary-red);
 }
 
-
 .showcase-img {
     width: 100%;
     height: 200px;
-    object-fit: contain; /* keeps proportion */
+    object-fit: contain;
     margin-bottom: 20px;
     border-radius: 10px;
     transition: transform 0.4s ease, filter 0.4s ease;
@@ -509,18 +547,6 @@ body {
 .showcase-item:hover .showcase-img {
     transform: scale(1.05);
     filter: brightness(1.1);
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
 }
 
 .showcase-item h3 {
@@ -534,57 +560,58 @@ body {
     line-height: 1.8;
 }
 
-/*why partner with rdl*/
+/* Why Partner with RDL */
 .dealer-benefits {
-            padding: 80px 20px;
-            background: #f8f9fa;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .benefit-box {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-top: 4px solid #c1272d;
-        }
-        
-        .benefit-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(193, 39, 45, 0.2);
-        }
-        
-        .benefit-icon {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
-        
-        .benefit-box h3 {
-            color: #343a40;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .benefit-box p {
-            color: #6c757d;
-            line-height: 1.7;
-        }
-        
-        .dealer-application {
-            padding: 80px 20px;
-            background: white;
-        }
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefit-box {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid #c1272d;
+}
+
+.benefit-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(193, 39, 45, 0.2);
+}
+
+.benefit-icon {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.benefit-box h3 {
+    color: #343a40;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.benefit-box p {
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+.dealer-application {
+    padding: 80px 20px;
+    background: white;
+}
+
 /* Categories Section */
 .categories {
     padding: 80px 20px;
@@ -625,7 +652,7 @@ body {
 .category-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* keeps full image visible */
+    object-fit: contain;
     transition: transform 0.4s ease;
 }
 
@@ -660,6 +687,7 @@ body {
     border-radius: 50px;
     transition: all 0.3s ease;
     transform: scale(0.8);
+    min-height: 44px;
 }
 
 .category-card:hover .category-overlay span {
@@ -677,66 +705,61 @@ body {
     color: var(--dark-gray);
     font-size: 18px;
 }
-/* dealer button*/
+
+/* Dealer Button Section */
 .dealer-section {
     margin-top: 10px;
     padding: 80px 20px;
-
-    /* KEEP your red gradient background */
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
-
     color: var(--white);
     text-align: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 70px;
-
     position: relative;
     overflow: hidden;
 }
 
-/* Background image that behaves EXACTLY like CSS background */
 .dealer-section .bg-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 🔥 same as background-size: cover */
+    object-fit: cover;
     z-index: -1;
-    opacity: 0.5; /* simulate rgba(0,0,0,0.5) overlay */
+    opacity: 0.5;
 }
 
-        
-        .dealer-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .dealer-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .dealer-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--white);
-            color: var(--primary-red);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-        
-        .dealer-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+.dealer-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.dealer-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.dealer-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--white);
+    color: var(--primary-red);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+.dealer-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
 
 /* Stats Section */
 .stats {
@@ -777,6 +800,7 @@ body {
 }
 
 /* Why Choose Section */
+
 .why-choose {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
@@ -791,10 +815,13 @@ body {
     background: var(--white);
 }
 
-.benefits-grid {
+/* NEW: Grid container for benefit cards */
+.benefits-grid,
+.why-choose .showcase-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .benefit-card {
@@ -830,9 +857,9 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--dark-gray);
     color: var(--white);
     padding: 60px 20px 20px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
 }
 
 .footer-grid {
@@ -879,6 +906,9 @@ body {
     color: var(--white);
     text-decoration: none;
     transition: all 0.3s ease;
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
 }
 
 .footer-col a:hover {
@@ -899,284 +929,1290 @@ body {
 }
 
 /* ========================================
-   GLOBAL RESPONSIVE PACK (ALL SECTIONS)
-   Breakpoints: 1200, 1024, 768, 600, 480, 360
-   ======================================== */
+   COMPREHENSIVE MOBILE RESPONSIVE DESIGN
+   Progressive Enhancement Strategy
+======================================== */
 
-/* ---------- ≤ 1200px (large laptop) ---------- */
+/* ============================================
+   BREAKPOINT: 1200px (Large Laptops/Desktops)
+============================================ */
 @media (max-width: 1200px) {
-  .container, .nav-container { max-width: 100%; padding: 0 16px; }
-  .logo-circle { width: 110px; height: 52px; }
-  .nav-menu a { padding: 10px 16px; }
-  .section-title { font-size: 36px; }
+    .container, .nav-container {
+        max-width: 100%;
+        padding: 0 18px;
+    }
 
-  /* Hero */
-  .hero { height: 85vh; }
-  .slide-content { max-width: 900px; }
-  .slide-content h1 { font-size: 52px; }
-  .slide-content p { font-size: 22px; }
+    .logo-circle {
+        width: 110px;
+        height: 52px;
+    }
 
-  /* Cards */
-  .showcase-grid, .category-grid, .benefits-grid, .stats-grid {
-    gap: 30px;
-  }
-  .showcase-item, .category-card, .benefit-card, .stat-item { border-radius: 14px; }
-  .showcase-img, .category-image { height: 230px; }
+    .logo-title {
+        font-size: 20px;
+    }
+
+    .nav-menu a {
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+
+    .dropdown-menu {
+        min-width: 450px;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        height: 90vh;
+    }
+
+    .slide-content {
+        max-width: 900px;
+    }
+
+    .slide-content h1 {
+        font-size: 56px;
+    }
+
+    .slide-content p {
+        font-size: 22px;
+    }
+
+    /* Sections */
+    .section-title {
+        font-size: 38px;
+    }
+
+    .showcase-grid,
+    .category-grid,
+    .benefits-grid {
+        gap: 32px;
+    }
+
+    /* Why Choose - 4 cards */
+    .benefits-grid,
+    .why-choose .showcase-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+    
+    .benefit-card {
+        padding: 35px 25px;
+    }
+    
+    .benefit-card h3 {
+        font-size: 20px;
+    }
+    
+    .benefit-number {
+        font-size: 44px;
+    }
 }
 
-/* ---------- ≤ 1024px (tablet landscape / small laptop) ---------- */
+/* ============================================
+   BREAKPOINT: 1024px (Tablets Landscape)
+============================================ */
 @media (max-width: 1024px) {
-  /* NAV */
-  .nav-container { height: 76px; }
-  .logo-link { margin-right: 28px; }
-  .nav-menu a { font-size: 15px; }
+    .nav-container {
+        height: 76px;
+        padding: 0 16px;
+    }
 
-  /* Dropdown gets roomier */
-  .dropdown-menu {
-    min-width: 420px;
-    padding: 18px;
-    gap: 14px;
-  }
+    .logo-link {
+        margin-right: 30px;
+    }
 
-  /* HERO */
-  .hero { height: 78vh; }
-  .slide { background-size: cover; background-position: center; }
-  .slide::before { background: rgba(0,0,0,0.45); }
-  .slide-content h1 { font-size: 44px; }
-  .slide-content p { font-size: 20px; }
+    .logo-circle {
+        width: 105px;
+        height: 50px;
+    }
 
-  .slider-dots { bottom: 24px; gap: 12px; }
-  .dot { width: 10px; height: 10px; }
+    .nav-menu a {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
 
-  /* SECTIONS */
-  .showcase, .categories, .dealer-benefits, .dealer-section,
-  .stats, .why-choose, .footer { padding: 70px 18px; }
+    .dropdown-menu {
+        min-width: 400px;
+        padding: 18px;
+        gap: 16px;
+    }
 
-  /* Cards + images */
-  .showcase-img { height: 200px; }
-  .category-image { height: 220px; }
+    .quality-section {
+        padding: 12px;
+    }
 
-  /* Footer */
-  .footer-logo-img { width: 160px; height: 64px; }
+    .quality-section h4 {
+        font-size: 15px;
+    }
+
+    .quality-section p {
+        font-size: 12px;
+    }
+
+    /* Hero */
+    .hero {
+        height: 80vh;
+        margin-top: 76px;
+    }
+
+    .slide-content h1 {
+        font-size: 48px;
+        letter-spacing: 2px;
+    }
+
+    .slide-content p {
+        font-size: 20px;
+    }
+
+    .cta-button {
+        padding: 14px 36px;
+        font-size: 17px;
+    }
+
+    /* Sections */
+    .showcase,
+    .categories,
+    .dealer-benefits,
+    .dealer-section,
+    .stats,
+    .why-choose,
+    .footer {
+        padding: 70px 16px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .showcase-img,
+    .category-image {
+        height: 220px;
+    }
+
+    .showcase-item,
+    .benefit-box {
+        padding: 32px 24px;
+    }
+
+    .dealer-section h2 {
+        font-size: 32px;
+    }
+
+    .dealer-section p {
+        font-size: 17px;
+    }
+
+    .stat-number {
+        font-size: 44px;
+    }
+
+    .footer-grid {
+        gap: 32px;
+    }
+
+    /* Why Choose - 2x2 grid */
+    .benefits-grid,
+    .why-choose .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .benefit-card {
+        padding: 32px 24px;
+    }
 }
 
-/* ---------- ≤ 768px (tablet portrait) ---------- */
+/* ============================================
+   BREAKPOINT: 768px (Tablets Portrait) - MAJOR MOBILE SHIFT
+============================================ */
 @media (max-width: 768px) {
-  /* NAV collapses */
-  .hamburger { display: flex; }
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 80px;
-    width: 100%;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-    background: var(--white);
-    flex-direction: column;
-    padding: 16px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    gap: 0;
-  }
-  .nav-menu.active { left: 0; }
-  .nav-menu a { padding: 14px 18px; display: block; }
+    /* ==== NAVIGATION MOBILE MENU ==== */
+    .hamburger {
+        display: flex;
+    }
 
-  /* Dropdown acts inline */
-  .dropdown-menu {
-    position: static;
-    min-width: 100%;
-    grid-template-columns: 1fr;
-    padding: 12px 14px;
-    box-shadow: none;
-    background: var(--off-white);
-    opacity: 1; visibility: visible; transform: none;
-  }
-  .dropdown:hover .dropdown-menu { display: none; }
-  .dropdown.active .dropdown-menu { display: grid; }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 76px;
+        width: 100%;
+        max-height: calc(100vh - 76px);
+        overflow-y: auto;
+        background: var(--white);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        gap: 0;
+        transition: left 0.4s ease;
+        z-index: 999;
+    }
 
-  /* HERO (home screen photo set perfectly) */
-  .hero { height: 72vh; }
-  .slide { background-position: center top; }
-  .slide::before { background: rgba(0,0,0,0.5); } /* stronger contrast */
-  .slide-content { width: 92%; }
-  .slide-content h1 { font-size: 36px; letter-spacing: 1px; }
-  .slide-content p { font-size: 18px; margin-bottom: 24px; }
-  .cta-button { padding: 12px 28px; font-size: 16px; }
+    .nav-menu.active {
+        left: 0;
+    }
 
-  /* TITLES */
-  .section-title { font-size: 30px; margin-bottom: 44px; }
-  .section-title::after { width: 80px; }
+    .nav-menu li {
+        width: 100%;
+    }
 
-  /* SHOWCASE / PRODUCTS */
-  .showcase { padding: 60px 16px; }
-  .showcase-grid { grid-template-columns: 1fr; gap: 24px; }
-  .showcase-item { padding: 22px; }
-  .showcase-img { height: 180px; }
-  .showcase-item h3 { font-size: 22px; }
+    .nav-menu a {
+        padding: 16px 24px;
+        display: block;
+        font-size: 16px;
+        border-bottom: 1px solid var(--off-white);
+        min-height: 48px;
+    }
 
-  /* CATEGORIES */
-  .categories { padding: 60px 16px; }
-  .category-grid { grid-template-columns: 1fr; gap: 24px; }
-  .category-card { border-radius: 12px; }
-  .category-image { height: 210px; }
-  .category-card h3 { font-size: 18px; padding: 16px; }
-  .category-overlay span { font-size: 16px; padding: 10px 24px; }
+    /* ✅ HIDE QUALITY DROPDOWN ON MOBILE */
+    .dropdown {
+        display: none !important;
+    }
 
-  /* DEALER BENEFITS (why partner) */
-  .dealer-benefits { padding: 60px 16px; }
-  .benefits-grid { grid-template-columns: 1fr; gap: 22px; }
-  .benefit-box { padding: 26px 20px; }
-  .benefit-icon { font-size: 44px; }
-  .benefit-box h3 { font-size: 18px; }
-  .benefit-box p { font-size: 15px; }
+    /* ==== HERO SECTION ==== */
+    .hero {
+        height: 70vh;
+        margin-top: 76px;
+    }
 
-  /* DEALER CTA section (button banner) */
-  .dealer-section { padding: 60px 16px; text-align: center; }
-  .dealer-section h2 { font-size: 28px; }
-  .dealer-section p { font-size: 16px; }
-  .dealer-btn { padding: 12px 28px; font-size: 16px; }
+    .slide {
+        background-position: center;
+    }
 
-  /* STATS */
-  .stats { padding: 60px 16px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .stat-item { padding: 22px; }
-  .stat-number { font-size: 38px; }
-  .stat-label { font-size: 14px; }
+    .slide::before {
+        background: rgba(0, 0, 0, 0.55);
+    }
 
-  /* WHY CHOOSE */
-  .why-choose { padding: 60px 16px; }
-  .why-choose .section-title { font-size: 30px; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .benefit-card { padding: 24px 18px; }
-  .benefit-number { font-size: 40px; margin-bottom: 12px; }
+    .slide-content {
+        width: 92%;
+        padding: 0 16px;
+    }
 
-  /* FOOTER */
-  .footer { padding: 54px 16px 16px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .footer-col h4 { font-size: 18px; }
-  .footer-col ul li { margin-bottom: 8px; }
-  .footer-logo-img { width: 150px; height: 60px; }
+    .slide-content h1 {
+        font-size: 36px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+
+    .slide-content p {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .cta-button {
+        padding: 13px 32px;
+        font-size: 16px;
+    }
+
+    .slider-dots {
+        bottom: 20px;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border: 1.5px solid white;
+    }
+
+    .dot.active {
+        width: 26px;
+        border-radius: 4px;
+    }
+
+    /* ==== SECTION TITLES ==== */
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .section-title::after {
+        width: 80px;
+        height: 3px;
+    }
+
+    /* ==== SHOWCASE / PRODUCTS ==== */
+    .showcase {
+        padding: 60px 16px;
+    }
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .showcase-item {
+        padding: 28px 20px;
+    }
+
+    .showcase-img {
+        height: 180px;
+    }
+
+    .showcase-item h3 {
+        font-size: 22px;
+    }
+
+    .showcase-item p {
+        font-size: 15px;
+    }
+
+    /* ==== CATEGORIES ==== */
+    .categories {
+        padding: 60px 16px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .category-image {
+        height: 220px;
+    }
+
+    .category-card h3 {
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    .category-overlay span {
+        font-size: 16px;
+        padding: 10px 26px;
+    }
+
+    /* ==== DEALER BENEFITS ==== */
+    .dealer-benefits {
+        padding: 60px 16px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .benefit-box {
+        padding: 28px 22px;
+    }
+
+    .benefit-icon {
+        font-size: 46px;
+    }
+
+    .benefit-box h3 {
+        font-size: 19px;
+    }
+
+    .benefit-box p {
+        font-size: 15px;
+    }
+
+    /* ==== DEALER CTA SECTION ==== */
+    .dealer-section {
+        padding: 60px 16px;
+        margin-top: 50px;
+    }
+
+    .dealer-section h2 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    .dealer-section p {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .dealer-btn {
+        padding: 13px 32px;
+        font-size: 16px;
+    }
+
+    /* ==== STATS ==== */
+    .stats {
+        padding: 60px 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding: 24px 16px;
+    }
+
+    .stat-number {
+        font-size: 40px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+
+    /* ==== WHY CHOOSE ==== */
+    .why-choose {
+        padding: 60px 16px;
+    }
+
+    .why-choose .section-title {
+        font-size: 32px;
+    }
+
+    /* Why Choose - 2 cards per row */
+    .benefits-grid,
+    .why-choose .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .benefit-card {
+        padding: 28px 20px;
+    }
+
+    .benefit-number {
+        font-size: 42px;
+        margin-bottom: 16px;
+    }
+
+    .benefit-card h3 {
+        font-size: 19px;
+    }
+
+    .benefit-card p {
+        font-size: 15px;
+    }
+
+    /* ==== FOOTER ==== */
+    .footer {
+        padding: 50px 16px 16px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .footer-col h4 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .footer-logo-img {
+        width: 160px;
+        height: 64px;
+    }
+
+    .footer-bottom {
+        font-size: 13px;
+        padding-top: 16px;
+    }
 }
 
-/* ---------- ≤ 600px (large mobile) ---------- */
+/* ============================================
+   BREAKPOINT: 600px (Large Mobile Phones)
+============================================ */
 @media (max-width: 600px) {
-  /* HERO */
-  .hero { height: 66vh; }
-  .slide { background-position: center; }
-  .slide::before { background: rgba(0,0,0,0.55); }
-  .slide-content h1 { font-size: 30px; }
-  .slide-content p { font-size: 16px; }
-  .slider-dots { bottom: 18px; gap: 10px; }
-  .dot { width: 10px; height: 10px; }
-  .dot.active { width: 28px; border-radius: 6px; }
+    .nav-container {
+        height: 70px;
+        padding: 0 14px;
+    }
 
-  /* SHOWCASE / PRODUCTS */
-  .showcase-item { padding: 18px; }
-  .showcase-img { height: 160px; }
-  .showcase-item p { font-size: 15px; }
+    .logo-circle {
+        width: 100px;
+        height: 48px;
+    }
 
-  /* CATEGORIES */
-  .category-image { height: 200px; }
-  .category-card h3 { font-size: 16px; }
-  .category-overlay span { font-size: 15px; padding: 9px 20px; }
+    .logo-title {
+        font-size: 19px;
+    }
 
-  /* DEALER BENEFITS */
-  .benefit-icon { font-size: 40px; }
-  .benefit-box { padding: 20px 16px; }
+    .logo-subtitle {
+        font-size: 12px;
+    }
 
-  /* STATS */
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .stat-number { font-size: 34px; }
+    /* Hero */
+    .hero {
+        height: 65vh;
+        margin-top: 70px;
+    }
 
-  /* WHY CHOOSE */
-  .benefit-card h3 { font-size: 18px; }
-  .benefit-card p { font-size: 15px; }
+    .slide::before {
+        background: rgba(0, 0, 0, 0.6);
+    }
 
-  /* FOOTER */
-  .footer-grid { grid-template-columns: 1fr; gap: 18px; }
-  .footer { padding: 46px 14px 14px; }
-  .footer-bottom { font-size: 14px; }
+    .slide-content h1 {
+        font-size: 30px;
+    }
+
+    .slide-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .cta-button {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    .slider-dots {
+        bottom: 16px;
+        gap: 7px;
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .dot.active {
+        width: 24px;
+    }
+
+    /* Sections */
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 36px;
+    }
+
+    .section-title::after {
+        width: 70px;
+    }
+
+    .showcase,
+    .categories,
+    .dealer-benefits,
+    .dealer-section,
+    .stats,
+    .why-choose {
+        padding: 50px 14px;
+    }
+
+    .showcase-item,
+    .benefit-box,
+    .category-card,
+    .benefit-card {
+        border-radius: 12px;
+    }
+
+    .showcase-item {
+        padding: 24px 18px;
+    }
+
+    .showcase-img {
+        height: 160px;
+    }
+
+    .showcase-item h3 {
+        font-size: 20px;
+    }
+
+    .category-image {
+        height: 200px;
+    }
+
+    .category-card h3 {
+        padding: 16px;
+        font-size: 17px;
+    }
+
+    .benefit-icon {
+        font-size: 42px;
+    }
+
+    .benefit-box {
+        padding: 24px 18px;
+    }
+
+    .benefit-box h3 {
+        font-size: 18px;
+    }
+
+    .dealer-section h2 {
+        font-size: 26px;
+    }
+
+    .dealer-section p {
+        font-size: 15px;
+    }
+
+    .dealer-btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    /* Why Choose - 1 card per row */
+    .benefits-grid,
+    .why-choose .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .benefit-card {
+        padding: 24px 18px;
+    }
+
+    .benefit-number {
+        font-size: 38px;
+    }
+
+    .benefit-card h3 {
+        font-size: 18px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 46px 14px 14px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-col h4 {
+        font-size: 17px;
+    }
+
+    .footer-logo-img {
+        width: 150px;
+        height: 60px;
+    }
 }
 
-/* ---------- ≤ 480px (mobile) ---------- */
+/* ============================================
+   BREAKPOINT: 480px (Standard Mobile Phones)
+============================================ */
 @media (max-width: 480px) {
-  /* NAV compact */
-  .nav-container { height: 70px; }
-  .logo-circle { width: 98px; height: 46px; }
-  .logo-title { font-size: 18px; }
-  .logo-subtitle { font-size: 11px; }
-  .nav-menu a { padding: 13px 16px; font-size: 15px; }
+    .nav-container {
+        height: 68px;
+        padding: 0 12px;
+    }
 
-  /* HERO: “perfect fit” for phone */
-  .hero { height: 62vh; }
-  .slide { background-size: cover; background-position: center 18%; }
-  .slide-content { top: 52%; width: 94%; }
-  .slide-content h1 { font-size: 26px; }
-  .slide-content p { font-size: 15px; margin-bottom: 18px; }
-  .cta-button { padding: 11px 24px; font-size: 15px; }
+    .logo-circle {
+        width: 95px;
+        height: 46px;
+    }
 
-  /* Section title */
-  .section-title { font-size: 26px; margin-bottom: 34px; }
-  .section-title::after { width: 70px; }
+    .logo-title {
+        font-size: 18px;
+    }
 
-  /* PRODUCTS / SHOWCASE (single column) */
-  .showcase { padding: 48px 12px; }
-  .showcase-grid { gap: 18px; }
-  .showcase-item { padding: 16px; }
-  .showcase-img { height: 140px; }
+    .logo-subtitle {
+        font-size: 11px;
+    }
 
-  /* CATEGORIES (single column) */
-  .categories { padding: 48px 12px; }
-  .category-image { height: 180px; }
-  .category-card h3 { padding: 12px; }
+    .logo-link {
+        gap: 12px;
+        margin-right: 0;
+    }
 
-  /* DEALER CTA */
-  .dealer-section { padding: 52px 12px; }
-  .dealer-section h2 { font-size: 24px; }
-  .dealer-section p { font-size: 15px; }
-  .dealer-btn { padding: 11px 22px; font-size: 15px; }
+    .hamburger span {
+        width: 26px;
+    }
 
-  /* STATS */
-  .stats { padding: 48px 12px; }
-  .stats-grid { grid-template-columns: 1fr; gap: 16px; }
-  .stat-item { padding: 18px; }
-  .stat-number { font-size: 30px; }
-  .stat-label { font-size: 13px; }
+    .nav-menu {
+        top: 68px;
+        max-height: calc(100vh - 68px);
+    }
 
-  /* WHY CHOOSE */
-  .why-choose { padding: 48px 12px; }
-  .benefit-card { padding: 18px 14px; }
-  .benefit-number { font-size: 34px; }
+    .nav-menu a {
+        padding: 14px 20px;
+        font-size: 15px;
+        min-height: 46px;
+    }
 
-  /* FOOTER */
-  .footer { padding: 40px 12px 12px; }
-  .footer-col h4 { font-size: 16px; }
+    /* Hero - PERFECT MOBILE FIT */
+    .hero {
+        height: 60vh;
+        margin-top: 68px;
+    }
+
+    .slide {
+        background-size: cover;
+        background-position: center 20%;
+    }
+
+    .slide::before {
+        background: rgba(0, 0, 0, 0.62);
+    }
+
+    .slide-content {
+        top: 50%;
+        width: 94%;
+        padding: 0 12px;
+    }
+
+    .slide-content h1 {
+        font-size: 26px;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+    }
+
+    .slide-content p {
+        font-size: 15px;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+
+    .cta-button {
+        padding: 11px 26px;
+        font-size: 14px;
+    }
+
+    .slider-dots {
+        bottom: 14px;
+        gap: 6px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border: 1.5px solid white;
+    }
+
+    .dot.active {
+        width: 22px;
+        border-radius: 3px;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+    }
+
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    /* All Sections */
+    .showcase,
+    .categories,
+    .dealer-benefits,
+    .dealer-section,
+    .stats,
+    .why-choose {
+        padding: 46px 12px;
+    }
+
+    /* Showcase/Products */
+    .showcase-grid,
+    .category-grid,
+    .benefits-grid {
+        gap: 20px;
+    }
+
+    .showcase-item {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+
+    .showcase-img {
+        height: 140px;
+        margin-bottom: 16px;
+    }
+
+    .showcase-item h3 {
+        font-size: 19px;
+        margin-bottom: 12px;
+    }
+
+    .showcase-item p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Categories */
+    .category-image {
+        height: 180px;
+    }
+
+    .category-card h3 {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .category-overlay span {
+        font-size: 14px;
+        padding: 9px 22px;
+    }
+
+    /* Benefits */
+    .benefit-box {
+        padding: 22px 16px;
+        border-radius: 10px;
+    }
+
+    .benefit-icon {
+        font-size: 40px;
+        margin-bottom: 16px;
+    }
+
+    .benefit-box h3 {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .benefit-box p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Dealer CTA */
+    .dealer-section {
+        padding: 50px 12px;
+        margin-top: 40px;
+    }
+
+    .dealer-section h2 {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .dealer-section p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .dealer-btn {
+        padding: 11px 26px;
+        font-size: 14px;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .stat-item {
+        padding: 20px 14px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    /* Why Choose */
+    .benefit-card {
+        padding: 22px 16px;
+        border-radius: 10px;
+    }
+
+    .benefit-number {
+        font-size: 36px;
+        margin-bottom: 14px;
+    }
+
+    .benefit-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .benefit-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 42px 12px 12px;
+    }
+
+    .footer-grid {
+        gap: 18px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 7px;
+        font-size: 13px;
+    }
+
+    .footer-col a {
+        min-height: 40px;
+        line-height: 40px;
+    }
+
+    .footer-logo-img {
+        width: 140px;
+        height: 56px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        padding-top: 14px;
+    }
 }
 
-/* ---------- ≤ 360px (small phones) ---------- */
+/* ============================================
+   BREAKPOINT: 360px (Small Mobile Phones)
+============================================ */
 @media (max-width: 360px) {
-  /* NAV */
-  .logo-circle { width: 92px; height: 42px; }
-  .nav-menu a { font-size: 14px; padding: 12px 14px; }
+    .nav-container {
+        padding: 0 10px;
+    }
 
-  /* HERO */
-  .hero { height: 58vh; }
-  .slide { background-position: center 22%; }
-  .slide-content h1 { font-size: 22px; }
-  .slide-content p { font-size: 14px; }
-  .cta-button { padding: 9px 20px; font-size: 14px; }
+    .logo-circle {
+        width: 90px;
+        height: 44px;
+    }
 
-  /* Cards/images tighter */
-  .showcase-img { height: 130px; }
-  .category-image { height: 170px; }
+    .logo-title {
+        font-size: 16px;
+    }
+
+    .logo-subtitle {
+        font-size: 10px;
+    }
+
+    .logo-link {
+        gap: 10px;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 2.5px;
+    }
+
+    .nav-menu a {
+        padding: 13px 18px;
+        font-size: 14px;
+        min-height: 44px;
+    }
+
+    /* Hero - ULTRA COMPACT */
+    .hero {
+        height: 56vh;
+    }
+
+    .slide {
+        background-position: center 25%;
+    }
+
+    .slide::before {
+        background: rgba(0, 0, 0, 0.65);
+    }
+
+    .slide-content {
+        width: 96%;
+        padding: 0 10px;
+    }
+
+    .slide-content h1 {
+        font-size: 22px;
+        letter-spacing: 0px;
+        margin-bottom: 10px;
+    }
+
+    .slide-content p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .cta-button {
+        padding: 10px 22px;
+        font-size: 13px;
+        border-radius: 40px;
+    }
+
+    .slider-dots {
+        bottom: 12px;
+        gap: 5px;
+    }
+
+    .dot {
+        width: 5px;
+        height: 5px;
+        border: 1px solid white;
+    }
+
+    .dot.active {
+        width: 20px;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 28px;
+        padding-bottom: 14px;
+    }
+
+    .section-title::after {
+        width: 50px;
+        height: 2.5px;
+    }
+
+    /* All Sections */
+    .showcase,
+    .categories,
+    .dealer-benefits,
+    .dealer-section,
+    .stats,
+    .why-choose {
+        padding: 40px 10px;
+    }
+
+    /* Cards */
+    .showcase-item,
+    .benefit-box,
+    .category-card,
+    .benefit-card,
+    .stat-item {
+        border-radius: 8px;
+    }
+
+    .showcase-item {
+        padding: 18px 14px;
+    }
+
+    .showcase-img {
+        height: 130px;
+        margin-bottom: 14px;
+    }
+
+    .showcase-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .showcase-item p {
+        font-size: 13px;
+    }
+
+    .category-image {
+        height: 170px;
+    }
+
+    .category-card h3 {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .category-overlay span {
+        font-size: 13px;
+        padding: 8px 20px;
+    }
+
+    .benefit-box {
+        padding: 20px 14px;
+    }
+
+    .benefit-icon {
+        font-size: 38px;
+        margin-bottom: 14px;
+    }
+
+    .benefit-box h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .benefit-box p {
+        font-size: 13px;
+    }
+
+    .dealer-section {
+        padding: 46px 10px;
+        margin-top: 36px;
+    }
+
+    .dealer-section h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .dealer-section p {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .dealer-btn {
+        padding: 10px 24px;
+        font-size: 13px;
+    }
+
+    .stats-grid {
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 18px 12px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    .benefit-card {
+        padding: 20px 14px;
+    }
+
+    .benefit-number {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .benefit-card h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .benefit-card p {
+        font-size: 13px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 38px 10px 10px;
+    }
+
+    .footer-grid {
+        gap: 16px;
+    }
+
+    .footer-col h4 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .footer-col a {
+        min-height: 38px;
+        line-height: 38px;
+    }
+
+    .footer-logo-img {
+        width: 130px;
+        height: 52px;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
+        padding-top: 12px;
+    }
 }
 
-/* ---------- Accessibility: reduce motion ---------- */
+/* ============================================
+   LANDSCAPE MODE OPTIMIZATION
+============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+    }
+
+    .slide-content h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .cta-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .slider-dots {
+        bottom: 10px;
+    }
+
+    .nav-menu {
+        max-height: calc(100vh - 68px);
+        overflow-y: auto;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY: REDUCED MOTION
+============================================ */
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .slide {
+        transition: opacity 0.3s ease !important;
+    }
 }
 
-/* ---------- High-density screens: crisper images ---------- */
+/* ============================================
+   HIGH-DENSITY DISPLAYS (RETINA)
+============================================ */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .logo-circle { image-rendering: -webkit-optimize-contrast; }
-  .showcase-img, .category-image { image-rendering: -webkit-optimize-contrast; }
+    .logo-circle img,
+    .showcase-img,
+    .category-image img,
+    .footer-logo-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+============================================ */
+@media print {
+    .navbar,
+    .hamburger,
+    .slider-dots,
+    .footer {
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        margin-top: 0;
+    }
+
+    * {
+        background: white !important;
+        color: black !important;
+    }
 }

@@ -1,102 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products - RDL Genuine Parts</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- ⬇️ Replace your <style> with this upgraded version -->
-<style>
-    /* Respect users who prefer less motion */
-    @media (prefers-reduced-motion: reduce) {
-        * { animation: none !important; transition: none !important; }
-    }
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Respect users who prefer less motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
 
-    /* ---------------- Hero ---------------- */
-    .products-hero {
-    height: 60vh;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-    position: relative;
-    overflow: hidden;
+      /* ---------------- Hero ---------------- */
+      .products-hero {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+        position: relative;
+        overflow: hidden;
+        will-change: background-position;
+        background-attachment: fixed;
+        animation: heroPan 30s linear infinite alternate;
+      }
 
-    /* KEEP parallax effect + animation */
-    will-change: background-position;
-    background-attachment: fixed;
-    animation: heroPan 30s linear infinite alternate;
-}
+      .products-hero .bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        object-fit: cover;
+        z-index: -1;
+      }
 
+      @keyframes heroPan {
+        0% {
+          background-position: 50% 40%, center;
+        }
+        100% {
+          background-position: 50% 60%, center;
+        }
+      }
 
-.products-hero .bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* same as background-size: cover */
-    z-index: -1;
-}
-
-    @keyframes heroPan {
-        0% { background-position: 50% 40%, center; }
-        100% { background-position: 50% 60%, center; }
-    }
-
-    .products-hero::before {
-        content: '';
+      .products-hero::before {
+        content: "";
         position: absolute;
         inset: 0;
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="300" fill="rgba(255,255,255,0.05)"/><circle cx="800" cy="600" r="400" fill="rgba(255,255,255,0.03)"/></svg>');
         background-size: cover;
-
-        /* soft moving grain */
-        opacity: .7;
+        opacity: 0.7;
         mix-blend-mode: overlay;
         animation: floatDots 22s ease-in-out infinite alternate;
-    }
-    @keyframes floatDots {
-        0% { transform: translateY(-2%) scale(1.02); }
-        100% { transform: translateY(2%) scale(0.98); }
-    }
+      }
 
-    .products-hero-content {
+      @keyframes floatDots {
+        0% {
+          transform: translateY(-2%) scale(1.02);
+        }
+        100% {
+          transform: translateY(2%) scale(0.98);
+        }
+      }
+
+      .products-hero-content {
         position: relative;
         z-index: 2;
         text-align: center;
         color: var(--white);
         transform: translateY(10px);
         opacity: 0;
-        animation: fadeUp .8s ease-out forwards .2s;
-    }
+        animation: fadeUp 0.8s ease-out forwards 0.2s;
+      }
 
-    .products-hero h1 {
+      .products-hero h1 {
         font-size: 56px;
         margin-bottom: 20px;
         letter-spacing: 0.5px;
-        text-shadow: 0 6px 24px rgba(0,0,0,.35);
-    }
-    .products-hero p {
+        text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .products-hero p {
         font-size: 20px;
         opacity: 0.95;
-        text-shadow: 0 2px 10px rgba(0,0,0,.35);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
         transform: translateY(6px);
-        animation: fadeUp .9s ease-out forwards .35s;
-    }
+        animation: fadeUp 0.9s ease-out forwards 0.35s;
+      }
 
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(18px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    /* --------------- Sections --------------- */
-    .products-section { padding: 80px 20px; }
+      /* --------------- Sections --------------- */
+      .products-section {
+        padding: 80px 20px;
+      }
 
-    .product-category { margin-bottom: 80px; }
+      .product-category {
+        margin-bottom: 80px;
+      }
 
-    .category-header {
+      .category-header {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -104,703 +121,1495 @@
         padding-bottom: 20px;
         border-bottom: 3px solid var(--primary-red);
         position: sticky;
-        top: 70px; /* below your navbar */
-        background: color-mix(in oklab, white 85%, transparent);
+        top: 80px;
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(6px);
-        z-index: 1;
-    }
+        z-index: 10;
+        padding-top: 10px;
+      }
 
-    .category-icon {
-        width: 60px; height: 60px;
+      .category-icon {
+        width: 60px;
+        height: 60px;
         background: linear-gradient(135deg, var(--primary-red), var(--light-red));
         border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 28px;
-        box-shadow: 0 8px 20px rgba(193,39,45,.35);
+        box-shadow: 0 8px 20px rgba(193, 39, 45, 0.35);
         transform: translateZ(0);
-        transition: transform .35s ease;
-    }
-    .category-header:hover .category-icon {
-        transform: rotate(-6deg) scale(1.05);
-    }
+        transition: transform 0.35s ease;
+      }
 
-    .category-header h2 {
+      .category-header:hover .category-icon {
+        transform: rotate(-6deg) scale(1.05);
+      }
+
+      .category-header h2 {
         color: var(--primary-red);
         font-size: 32px;
-        letter-spacing:.3px;
-    }
+        letter-spacing: 0.3px;
+      }
 
-    /* --------------- Grid & Cards --------------- */
-    .products-grid {
+      /* --------------- Grid & Cards --------------- */
+      .products-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 30px;
-
-        /* staggered reveal using custom property (no new classes) */
         counter-reset: card;
-    }
-    .products-grid > .product-card {
+      }
+
+      .products-grid > .product-card {
         counter-increment: card;
         opacity: 0;
-        transform: translateY(14px) scale(.98);
-        animation: cardIn .65s ease forwards;
-        /* stagger via nth-child without adding classes */
-        animation-delay: calc( ( (counter(card) - 1) * 90ms) + 120ms );
-    }
-    @keyframes cardIn {
-        to { opacity: 1; transform: translateY(0) scale(1); }
-    }
+        transform: translateY(14px) scale(0.98);
+        animation: cardIn 0.65s ease forwards;
+        animation-delay: calc(((counter(card) - 1) * 90ms) + 120ms);
+      }
 
-    .product-card {
+      @keyframes cardIn {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .product-card {
         background: var(--white);
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, filter .35s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.35s ease, box-shadow 0.35s ease,
+          border-color 0.35s ease, filter 0.35s ease;
         border: 2px solid transparent;
-
-        /* nice subtle gradient border on hover */
         position: relative;
         isolation: isolate;
-    }
-    .product-card::after{
-        content:"";
-        position: absolute; inset: -2px;
+      }
+
+      .product-card::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
         border-radius: 16px;
-        background: linear-gradient(135deg, rgba(193,39,45,.45), rgba(255,120,120,.25));
-        z-index:-1;
+        background: linear-gradient(
+          135deg,
+          rgba(193, 39, 45, 0.45),
+          rgba(255, 120, 120, 0.25)
+        );
+        z-index: -1;
         opacity: 0;
-        transition: opacity .35s ease;
+        transition: opacity 0.35s ease;
         pointer-events: none;
-    }
+      }
 
-    .product-card:hover {
+      .product-card:hover {
         transform: translateY(-10px) rotateX(1deg) rotateY(-1deg);
-        box-shadow: 0 14px 40px rgba(193, 39, 45, 0.25), 0 6px 14px rgba(0,0,0,.12);
-        border-color: color-mix(in oklab, var(--primary-red) 45%, transparent);
+        box-shadow: 0 14px 40px rgba(193, 39, 45, 0.25),
+          0 6px 14px rgba(0, 0, 0, 0.12);
+        border-color: rgba(193, 39, 45, 0.45);
         filter: saturate(1.02);
-    }
-    .product-card:hover::after { opacity: 1; }
+      }
 
-    .product-image {
+      .product-card:hover::after {
+        opacity: 1;
+      }
+
+      .product-image {
         height: 220px;
         background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-        display: flex; align-items: center; justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 72px;
-        position: relative; overflow: hidden;
-    }
+        position: relative;
+        overflow: hidden;
+      }
 
-    .product-image img {
-        width: 100%; height: 100%; object-fit: contain;
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         transform: scale(1);
-        transition: transform .6s cubic-bezier(.2,.7,.2,1);
+        transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
         will-change: transform;
-    }
-    .product-card:hover .product-image img {
+      }
+
+      .product-card:hover .product-image img {
         transform: scale(1.06);
-    }
+      }
 
-    /* glossy “shine” sweep */
-    .product-image::before{
-        content:"";
-        position:absolute; inset:0;
-        background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.22) 50%, transparent 60%);
-        transform: translateX(-120%);
-        transition: transform .8s ease;
-        pointer-events: none;
-    }
-    .product-card:hover .product-image::before{
-        transform: translateX(120%);
-    }
-
-    .product-badge {
+      .product-image::before {
+        content: "";
         position: absolute;
-        top: 15px; right: 15px;
+        inset: 0;
+        background: linear-gradient(
+          105deg,
+          transparent 40%,
+          rgba(255, 255, 255, 0.22) 50%,
+          transparent 60%
+        );
+        transform: translateX(-120%);
+        transition: transform 0.8s ease;
+        pointer-events: none;
+      }
+
+      .product-card:hover .product-image::before {
+        transform: translateX(120%);
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
         background: var(--primary-red);
         color: var(--white);
-        padding: 5px 15px; border-radius: 20px;
-        font-size: 12px; font-weight: bold;
-        box-shadow: 0 6px 18px rgba(193, 39, 45, .35);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 0 6px 18px rgba(193, 39, 45, 0.35);
         animation: popPulse 2.5s ease-in-out infinite;
-    }
-    @keyframes popPulse {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-2px) scale(1.05); }
-    }
+      }
 
-    .product-info { padding: 25px; }
+      @keyframes popPulse {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-2px) scale(1.05);
+        }
+      }
 
-    .product-info h3 {
+      .product-info {
+        padding: 25px;
+      }
+
+      .product-info h3 {
         color: var(--dark-gray);
         font-size: 20px;
         margin-bottom: 10px;
-        letter-spacing: .2px;
-    }
-    .product-info p {
+        letter-spacing: 0.2px;
+      }
+
+      .product-info p {
         color: var(--gray);
-        margin-bottom: 15px; font-size: 14px;
-    }
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
 
-    .product-features {
-        display: flex; flex-wrap: wrap;
-        gap: 8px; margin-bottom: 20px;
-    }
-    .feature-tag {
-        background: #ffe0e0; color: var(--primary-red);
-        padding: 4px 12px; border-radius: 15px; font-size: 12px;
-        transition: transform .25s ease;
-    }
-    .feature-tag:hover { transform: translateY(-2px); }
+      .product-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
 
-    /* --------------- Button with ripple (no extra elements/classes) --------------- */
-    .inquire-btn {
+      .feature-tag {
+        background: #ffe0e0;
+        color: var(--primary-red);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        transition: transform 0.25s ease;
+      }
+
+      .feature-tag:hover {
+        transform: translateY(-2px);
+      }
+
+      .inquire-btn {
         width: 100%;
         padding: 12px;
         background: linear-gradient(135deg, var(--primary-red), var(--light-red));
         color: var(--white);
-        border: none; border-radius: 8px;
-        font-weight: bold; cursor: pointer;
-        transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
-        position: relative; overflow: hidden;
-
-        /* ripple via custom properties (set from JS) */
-        --rx: 50%; --ry: 50%;
-        --ripple-opacity: 0;
-        background-image:
-          radial-gradient(circle 0px at var(--rx) var(--ry), rgba(255,255,255,var(--ripple-opacity)) 0%, transparent 1%);
-        background-blend-mode: screen;
-    }
-
-    .inquire-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(193, 39, 45, .35);
-        filter: saturate(1.02);
-    }
-
-    .inquire-btn:active { transform: translateY(0); }
-
-    /* --------------- Footer polish --------------- */
-    .footer {
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
         position: relative;
         overflow: hidden;
-    }
-    .footer::before{
-        content:"";
-        position:absolute; inset:0;
-        background: radial-gradient(1200px 400px at 10% 0%, rgba(193,39,45,.06), transparent 60%),
-                    radial-gradient(900px 300px at 90% 100%, rgba(193,39,45,.06), transparent 50%);
+        --rx: 50%;
+        --ry: 50%;
+        --ripple-opacity: 0;
+        background-image: radial-gradient(
+          circle 0px at var(--rx) var(--ry),
+          rgba(255, 255, 255, var(--ripple-opacity)) 0%,
+          transparent 1%
+        );
+        background-blend-mode: screen;
+        min-height: 44px;
+      }
+
+      .inquire-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(193, 39, 45, 0.35);
+        filter: saturate(1.02);
+      }
+
+      .inquire-btn:active {
+        transform: translateY(0);
+      }
+
+      /* --------------- Enhanced Footer --------------- */
+      .footer {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: var(--white);
+        padding: 70px 20px 25px;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            1200px 400px at 10% 0%,
+            rgba(193, 39, 45, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 300px at 90% 100%,
+            rgba(193, 39, 45, 0.08),
+            transparent 50%
+          );
         pointer-events: none;
-    }
-    /* ======================================================
-   PRODUCTS: force 2 cards per row on small screens
-   and tighten card spacing/typography for mobile
-   ====================================================== */
+        z-index: 0;
+      }
 
-/* Large mobile & below → exactly 2 per row */
-@media (max-width: 600px) {
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 14px !important;
-  }
+      .footer .container {
+        position: relative;
+        z-index: 1;
+      }
 
-  .product-card { border-radius: 12px; }
-  .product-image { height: 140px; }
-  .product-info { padding: 14px; }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin-bottom: 40px;
+      }
 
-  .product-info h3 { font-size: 16px; margin-bottom: 6px; }
-  .product-info p { font-size: 13px; margin-bottom: 10px; }
-  .feature-tag { font-size: 11px; padding: 3px 10px; }
-  .inquire-btn { padding: 10px; font-size: 14px; }
+      .footer-col {
+        animation: fadeInUp 0.6s ease forwards;
+      }
 
-  /* Make “Popular/New” badge smaller so it doesn’t overlap */
-  .product-badge {
-    top: 10px; right: 10px;
-    padding: 4px 10px; font-size: 11px;
-  }
+      .footer-col:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .footer-col:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .footer-col:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .footer-col:nth-child(4) {
+        animation-delay: 0.4s;
+      }
 
-  /* Sticky category header: smaller + safer spacing under navbar */
-  .category-header {
-    top: 64px;
-    gap: 12px;
-    padding-bottom: 14px;
-    margin-bottom: 24px;
-    border-bottom-width: 2px;
-  }
-  .category-icon { width: 44px; height: 44px; font-size: 22px; }
-  .category-header h2 { font-size: 20px; }
-}
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-/* Very small phones → keep 2 per row, shrink imagery a touch */
-@media (max-width: 420px) {
-  .products-grid { gap: 12px !important; }
-  .product-image { height: 120px; }
-  .product-info { padding: 12px; }
-  .inquire-btn { padding: 9px; font-size: 13px; }
-}
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
 
-/* Optional: improve hero behavior on mobile
-   (fixed backgrounds stutter on iOS) */
-@media (max-width: 600px) {
-  .products-hero {
-    height: 56vh;
-    background-attachment: scroll;    /* smoother on phones */
-    animation: none;                   /* reduce GPU jank */
-    background-position: center 18%;
-  }
-  .products-hero h1 { font-size: 28px; }
-  .products-hero p  { font-size: 15px; }
-}
+      .footer-logo-img {
+        height: 70px;
+        width: 180px;
+        filter: brightness(1.1);
+        transition: transform 0.3s ease;
+      }
 
-/* ======================================================
-   FOOTER: better layout, spacing, and alignment on mobile
-   ====================================================== */
+      .footer-logo-img:hover {
+        transform: scale(1.05);
+      }
 
-/* Tablet → 2 columns, tidy spacing */
-@media (max-width: 768px) {
-  .footer { padding: 54px 16px 16px; }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  .footer-col h4 { font-size: 18px; margin-bottom: 14px; }
-  .footer-col ul li { margin-bottom: 8px; }
-  .footer-logo-img { width: 160px; height: 64px; }
-  .footer-bottom { margin-top: 10px; font-size: 14px; }
-}
+      .footer-col h4 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: 20px;
+        position: relative;
+        padding-bottom: 12px;
+      }
 
-/* Phones → single column, centered, comfortable tap targets */
-@media (max-width: 520px) {
-  .footer { padding: 44px 14px 14px; }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    text-align: center;
-  }
-  .footer-col,
-  .footer-logo { align-items: center; justify-content: center; }
+      .footer-col h4::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--primary-red);
+        border-radius: 2px;
+      }
 
-  .footer-col h4 { font-size: 16px; margin-bottom: 10px; }
-  .footer-col ul { padding: 0; }
-  .footer-col ul li { margin-bottom: 6px; }
+      .footer-col ul {
+        list-style: none;
+      }
 
-  .company-name { margin-top: 8px; }
+      .footer-col ul li {
+        margin-bottom: 12px;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+        line-height: 1.6;
+      }
 
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.12);
-    padding-top: 14px;
-    opacity: 0.85;
-    line-height: 1.5;
-  }
-}
+      .footer-col ul li:hover {
+        opacity: 1;
+        transform: translateX(5px);
+        color: var(--primary-red);
+      }
 
-/* Tiny phones → slightly smaller logo/text to avoid wrapping */
-@media (max-width: 380px) {
-  .footer-logo-img { width: 140px; height: 56px; }
-  .footer-bottom { font-size: 13px; }
-}
+      .footer-col a {
+        color: var(--white);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        min-height: 44px;
+        line-height: 1.6;
+        padding: 8px 0;
+      }
 
-</style>
+      .footer-col a:hover {
+        color: var(--primary-red);
+      }
 
-</head>
-<body>
+      .footer-col p {
+        opacity: 0.9;
+        line-height: 1.7;
+        margin-bottom: 12px;
+      }
+
+      .company-name {
+        color: var(--primary-red);
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 16px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 25px;
+        text-align: center;
+        opacity: 0.85;
+      }
+
+      .footer-bottom p {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      /* ============================================
+         COMPREHENSIVE MOBILE RESPONSIVE DESIGN
+         ============================================ */
+
+      /* ============================================
+         BREAKPOINT: 1200px (Large Laptops/Desktops)
+         ============================================ */
+      @media (max-width: 1200px) {
+        .products-hero h1 {
+          font-size: 50px;
+        }
+
+        .products-hero p {
+          font-size: 19px;
+        }
+
+        .category-header h2 {
+          font-size: 30px;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 28px;
+        }
+
+        .footer-grid {
+          gap: 35px;
+        }
+      }
+
+      /* ============================================
+         BREAKPOINT: 1024px (Tablets Landscape)
+         ============================================ */
+      @media (max-width: 1024px) {
+        .products-hero {
+          height: 55vh;
+          margin-top: 76px;
+        }
+
+        .products-hero h1 {
+          font-size: 44px;
+        }
+
+        .products-hero p {
+          font-size: 18px;
+        }
+
+        .products-section {
+          padding: 70px 18px;
+        }
+
+        .product-category {
+          margin-bottom: 70px;
+        }
+
+        .category-header {
+          top: 76px;
+          gap: 18px;
+        }
+
+        .category-icon {
+          width: 56px;
+          height: 56px;
+          font-size: 26px;
+        }
+
+        .category-header h2 {
+          font-size: 28px;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 26px;
+        }
+
+        .product-image {
+          height: 200px;
+        }
+
+        .product-info {
+          padding: 22px;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px;
+        }
+      }
+
+      /* ============================================
+         BREAKPOINT: 768px (Tablets Portrait)
+         ============================================ */
+      @media (max-width: 768px) {
+        .products-hero {
+          height: 50vh;
+          background-attachment: scroll;
+          animation: none;
+          background-position: center 25%;
+        }
+
+        .products-hero::before {
+          animation: none;
+        }
+
+        .products-hero h1 {
+          font-size: 38px;
+          margin-bottom: 16px;
+        }
+
+        .products-hero p {
+          font-size: 17px;
+        }
+
+        .products-section {
+          padding: 60px 16px;
+        }
+
+        .product-category {
+          margin-bottom: 60px;
+        }
+
+        .category-header {
+          top: 76px;
+          gap: 16px;
+          padding-bottom: 16px;
+          margin-bottom: 32px;
+          border-bottom-width: 2.5px;
+        }
+
+        .category-icon {
+          width: 52px;
+          height: 52px;
+          font-size: 24px;
+        }
+
+        .category-header h2 {
+          font-size: 26px;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 22px;
+        }
+
+        .product-card {
+          border-radius: 12px;
+        }
+
+        .product-card:hover {
+          transform: translateY(-8px);
+        }
+
+        .product-image {
+          height: 180px;
+        }
+
+        .product-info {
+          padding: 20px;
+        }
+
+        .product-info h3 {
+          font-size: 19px;
+        }
+
+        .product-info p {
+          font-size: 14px;
+        }
+
+        .product-badge {
+          top: 12px;
+          right: 12px;
+          padding: 5px 13px;
+          font-size: 11px;
+        }
+
+        .inquire-btn {
+          padding: 11px;
+          font-size: 15px;
+        }
+
+        .footer {
+          padding: 60px 16px 20px;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 28px;
+        }
+
+        .footer-col h4 {
+          font-size: 18px;
+          margin-bottom: 16px;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+
+        .footer-logo-img {
+          width: 160px;
+          height: 64px;
+        }
+
+        .footer-bottom {
+          padding-top: 20px;
+        }
+
+        .footer-bottom p {
+          font-size: 13px;
+        }
+      }
+
+      /* ============================================
+         BREAKPOINT: 600px (Large Mobile Phones)
+         ============================================ */
+      @media (max-width: 600px) {
+        .products-hero {
+          height: 46vh;
+          margin-top: 70px;
+        }
+
+        .products-hero h1 {
+          font-size: 32px;
+          margin-bottom: 14px;
+        }
+
+        .products-hero p {
+          font-size: 16px;
+        }
+
+        .products-section {
+          padding: 50px 14px;
+        }
+
+        .product-category {
+          margin-bottom: 50px;
+        }
+
+        .category-header {
+          top: 70px;
+          gap: 14px;
+          padding-bottom: 14px;
+          margin-bottom: 28px;
+        }
+
+        .category-icon {
+          width: 48px;
+          height: 48px;
+          font-size: 22px;
+        }
+
+        .category-header h2 {
+          font-size: 22px;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+
+        .product-card {
+          border-radius: 10px;
+        }
+
+        .product-image {
+          height: 150px;
+        }
+
+        .product-info {
+          padding: 16px;
+        }
+
+        .product-info h3 {
+          font-size: 17px;
+          margin-bottom: 8px;
+        }
+
+        .product-info p {
+          font-size: 13px;
+          margin-bottom: 12px;
+        }
+
+        .product-features {
+          gap: 6px;
+          margin-bottom: 16px;
+        }
+
+        .feature-tag {
+          font-size: 11px;
+          padding: 4px 10px;
+        }
+
+        .product-badge {
+          top: 10px;
+          right: 10px;
+          padding: 4px 11px;
+          font-size: 10px;
+        }
+
+        .inquire-btn {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        .footer {
+          padding: 50px 14px 16px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          text-align: center;
+        }
+
+        .footer-col {
+          align-items: center;
+        }
+
+        .footer-col h4 {
+          font-size: 17px;
+          margin-bottom: 14px;
+        }
+
+        .footer-col h4::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .footer-col ul li {
+          margin-bottom: 9px;
+        }
+
+        .footer-logo {
+          justify-content: center;
+        }
+
+        .footer-logo-img {
+          width: 150px;
+          height: 60px;
+        }
+
+        .company-name {
+          margin-top: 12px;
+        }
+      }
+
+      /* ============================================
+         BREAKPOINT: 480px (Standard Mobile Phones)
+         ============================================ */
+      @media (max-width: 480px) {
+        .products-hero {
+          height: 44vh;
+          background-position: center 20%;
+        }
+
+        .products-hero h1 {
+          font-size: 28px;
+          margin-bottom: 12px;
+        }
+
+        .products-hero p {
+          font-size: 15px;
+        }
+
+        .products-section {
+          padding: 46px 12px;
+        }
+
+        .product-category {
+          margin-bottom: 46px;
+        }
+
+        .category-header {
+          top: 68px;
+          gap: 12px;
+          padding-bottom: 12px;
+          margin-bottom: 24px;
+        }
+
+        .category-icon {
+          width: 44px;
+          height: 44px;
+          font-size: 20px;
+        }
+
+        .category-header h2 {
+          font-size: 20px;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 14px;
+        }
+
+        .product-card {
+          border-radius: 8px;
+        }
+
+        .product-card:hover {
+          transform: translateY(-6px);
+        }
+
+        .product-image {
+          height: 130px;
+        }
+
+        .product-info {
+          padding: 14px;
+        }
+
+        .product-info h3 {
+          font-size: 16px;
+          margin-bottom: 7px;
+        }
+
+        .product-info p {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+
+        .product-features {
+          gap: 5px;
+          margin-bottom: 14px;
+        }
+
+        .feature-tag {
+          font-size: 10px;
+          padding: 3px 9px;
+        }
+
+        .product-badge {
+          top: 8px;
+          right: 8px;
+          padding: 3px 10px;
+          font-size: 10px;
+        }
+
+        .inquire-btn {
+          padding: 9px;
+          font-size: 13px;
+        }
+
+        .footer {
+          padding: 44px 12px 14px;
+        }
+
+        .footer-grid {
+          gap: 20px;
+        }
+
+        .footer-col h4 {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 8px;
+          font-size: 13px;
+        }
+
+        .footer-col a {
+          min-height: 40px;
+          padding: 6px 0;
+        }
+
+        .footer-logo-img {
+          width: 140px;
+          height: 56px;
+        }
+
+        .footer-bottom {
+          padding-top: 16px;
+        }
+
+        .footer-bottom p {
+          font-size: 12px;
+        }
+      }
+
+      /* ============================================
+         BREAKPOINT: 360px (Small Mobile Phones)
+         ============================================ */
+      @media (max-width: 360px) {
+        .products-hero {
+          height: 40vh;
+        }
+
+        .products-hero h1 {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        .products-hero p {
+          font-size: 14px;
+        }
+
+        .products-section {
+          padding: 40px 10px;
+        }
+
+        .product-category {
+          margin-bottom: 40px;
+        }
+
+        .category-header {
+          gap: 10px;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+        }
+
+        .category-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+        }
+
+        .category-header h2 {
+          font-size: 18px;
+        }
+
+        .products-grid {
+          gap: 12px;
+        }
+
+        .product-image {
+          height: 120px;
+        }
+
+        .product-info {
+          padding: 12px;
+        }
+
+        .product-info h3 {
+          font-size: 15px;
+          margin-bottom: 6px;
+        }
+
+        .product-info p {
+          font-size: 11px;
+          margin-bottom: 9px;
+        }
+
+        .product-features {
+          gap: 4px;
+          margin-bottom: 12px;
+        }
+
+        .feature-tag {
+          font-size: 9px;
+          padding: 3px 8px;
+        }
+
+        .product-badge {
+          top: 6px;
+          right: 6px;
+          padding: 3px 8px;
+          font-size: 9px;
+        }
+
+        .inquire-btn {
+          padding: 8px;
+          font-size: 12px;
+        }
+
+        .footer {
+          padding: 38px 10px 12px;
+        }
+
+        .footer-grid {
+          gap: 18px;
+        }
+
+        .footer-col h4 {
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 7px;
+          font-size: 12px;
+        }
+
+        .footer-col p {
+          font-size: 13px;
+        }
+
+        .footer-logo-img {
+          width: 130px;
+          height: 52px;
+        }
+
+        .company-name {
+          font-size: 14px;
+        }
+
+        .footer-bottom p {
+          font-size: 11px;
+        }
+      }
+
+      /* ============================================
+         LANDSCAPE MODE OPTIMIZATION
+         ============================================ */
+      @media (max-height: 500px) and (orientation: landscape) {
+        .products-hero {
+          height: 80vh;
+        }
+
+        .products-hero h1 {
+          font-size: 32px;
+        }
+
+        .products-hero p {
+          font-size: 16px;
+        }
+
+        .category-header {
+          position: relative;
+          top: 0;
+        }
+      }
+
+      /* ============================================
+         PERFORMANCE OPTIMIZATION FOR MOBILE
+         ============================================ */
+      @media (max-width: 768px) {
+        .product-card {
+          will-change: auto;
+        }
+
+        .product-image img {
+          will-change: auto;
+        }
+
+        .products-hero {
+          will-change: auto;
+        }
+
+        .product-card:hover .product-image::before {
+          animation: none;
+        }
+
+        @keyframes cardIn {
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo-link">
-                    <div class="logo-circle"></div>
-                    <div class="logo-text">
-                        <div class="logo-title">RDL Genuine Parts</div>
-                        <div class="logo-subtitle">Two-Wheeler Fiber Components</div>
-                    </div>
-                </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html" class="active">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <a href="#home" class="logo-link">
+          <div class="logo-circle">
+            <img src="/images/LOGO RDL.png" alt="RDL Logo" />
+          </div>
+          <div class="logo-text">
+            <div class="logo-title">RDL Genuine Parts</div>
+            <div class="logo-subtitle">Two-Wheeler Fiber Components</div>
+          </div>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="products-hero">
+      <img
+        src="/images/OURPRODUCTS.jpg"
+        class="bg-img"
+        alt="Products Background"
+      />
 
-    <!-- 🔥 Background image added in HTML -->
-    <img src="/images/OURPRODUCTS.jpg" class="bg-img" alt="Products Background">
-
-    <div class="products-hero-content">
+      <div class="products-hero-content">
         <h1>Our Products</h1>
         <p>Premium Quality Motorcycle Parts & Accessories</p>
-    </div>
-</section>
-
+      </div>
+    </section>
 
     <!-- Products Section -->
     <section class="products-section">
-        <div class="container">
-            
-            <!-- Head Light Visor -->
-            <div class="product-category">
-                <div class="category-header">
-                    <div class="category-icon">💡</div>
-                    <h2>Head Light Visor</h2>
+      <div class="container">
+        <!-- Head Light Visor -->
+        <div class="product-category">
+          <div class="category-header">
+            <div class="category-icon">💡</div>
+            <h2>Head Light Visor</h2>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/Discover Visor.jpg"
+                  alt="Standard Head Light Visor"
+                />
+                <span class="product-badge">Popular</span>
+              </div>
+              <div class="product-info">
+                <h3>Head Light Visor</h3>
+                <p>High-quality visor for enhanced bike appearance</p>
+                <div class="product-features">
+                  <span class="feature-tag">UV Resistant</span>
+                  <span class="feature-tag">Durable</span>
                 </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/Discover Visor.jpg" alt="Standard Head Light Visor">
-                            <span class="product-badge">Popular</span>
-                        </div>
-                        <div class="product-info">
-                            <h3> Head Light Visor</h3>
-                            <p>High-quality visor for enhanced bike appearance</p>
-                            <div class="product-features">
-                                <span class="feature-tag">UV Resistant</span>
-                                <span class="feature-tag">Durable</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/headlight-visor-2.jpg" alt="Sport Visor Design">
-                        </div>
-                        <div class="product-info">
-                            <h3>Glass Headlight Visor</h3>
-                            <p>Sporty look with aerodynamic design</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Aerodynamic</span>
-                                <span class="feature-tag">Stylish</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/headlight-visor-3.jpg" alt="Sport Visor Design">
-                        </div>
-                        <div class="product-info">
-                            <h3> Head light Visor</h3>
-                            <p>Top black windshield/visor</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Sporty</span>
-                                <span class="feature-tag">Stylish</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
             </div>
-
-            <!-- Mudguard / Front Fender -->
-            <div class="product-category">
-                <div class="category-header">
-                    <div class="category-icon">🛡️</div>
-                    <h2>Mudguard / Front Fender</h2>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/headlight-visor-2.jpg"
+                  alt="Sport Visor Design"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Glass Headlight Visor</h3>
+                <p>Sporty look with aerodynamic design</p>
+                <div class="product-features">
+                  <span class="feature-tag">Aerodynamic</span>
+                  <span class="feature-tag">Stylish</span>
                 </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/mudguard-1.jpg" alt="Front Mudguard">
-                            <span class="product-badge">New</span>
-                        </div>
-                        <div class="product-info">
-                            <h3>Front Fender</h3>
-                            <p>Protection from dirt and debris</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Impact Resistant</span>
-                                <span class="feature-tag">Easy Install</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/mudguard-2.jpg" alt="Racing Fender">
-                        </div>
-                        <div class="product-info">
-                            <h3>Front Fender</h3>
-                            <p>Lightweight racing design</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Lightweight</span>
-                                <span class="feature-tag">Racing Style</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/mudguard-3.jpg" alt="Racing Fender">
-                        </div>
-                        <div class="product-info">
-                            <h3>Bike Splash Guard</h3>
-                            <p>Motorcycle Front Splash Guard Strong Protection
-</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Strong</span>
-                                <span class="feature-tag">Sporty look</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
             </div>
-
-            <!-- Rear Cowl / Tail Panel -->
-            <div class="product-category">
-                <div class="category-header">
-                    <div class="category-icon">🎯</div>
-                    <h2>Rear Cowl / Tail Panel</h2>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/headlight-visor-3.jpg"
+                  alt="Sport Visor Design"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Head light Visor</h3>
+                <p>Top black windshield/visor</p>
+                <div class="product-features">
+                  <span class="feature-tag">Sporty</span>
+                  <span class="feature-tag">Stylish</span>
                 </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/tail-panel-1.jpg" alt="Tail Panel - Direct Fit">
-                            <span class="product-badge">Best Seller</span>
-                        </div>
-                        <div class="product-info">
-                            <h3>Tail Panel - Direct Fit</h3>
-                            <p>Already joint tail panel, ready to install</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Pre-Assembled</span>
-                                <span class="feature-tag">Perfect Fit</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/tail-panel-2.jpg" alt="Sport Rear Cowl">
-                        </div>
-                        <div class="product-info">
-                            <h3>Sport Rear Cowl</h3>
-                            <p>Sleek sporty design for modern bikes</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Modern Design</span>
-                                <span class="feature-tag">High Quality</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/tail-panel-3.jpg" alt="Sport Rear Cowl">
-                        </div>
-                        <div class="product-info">
-                            <h3>Tail Panel For Hero Splendor Plus</h3>
-                            <p>Durable</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Top finishing</span>
-                                <span class="feature-tag">High Quality</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
             </div>
-
-            <!-- Side Panel / Side Box -->
-            <div class="product-category">
-                <div class="category-header">
-                    <div class="category-icon">📦</div>
-                    <h2>Side Panel / Side Box</h2>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/side-panel-1.jpg" alt="Side Panel - Chrome Fitted">
-                            <span class="product-badge">Special</span>
-                        </div>
-                        <div class="product-info">
-                            <h3>Side Panel - Chrome Fitted</h3>
-                            <p>Monogram & chrome already fitted, direct to fit</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Chrome Fitted</span>
-                                <span class="feature-tag">Ready to Use</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/side-panel-2.jpg" alt="Standard Side Panel">
-                        </div>
-                        <div class="product-info">
-                            <h3>Standard Side Panel</h3>
-                            <p>Classic design for all bike models</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Universal Fit</span>
-                                <span class="feature-tag">Durable</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Categories -->
-            <div class="product-category">
-                <div class="category-header">
-                    <div class="category-icon">⚙️</div>
-                    <h2>Other Essential Parts</h2>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/tpc-backplate.jpg" alt="T.P.C. Back Plate">
-                        </div>
-                        <div class="product-info">
-                            <h3>T.P.C. Back Plate</h3>
-                            <p>Foot trim & back plate assembly</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Precision Fit</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/nose-wincs.jpg" alt="Nose / Wincs">
-                        </div>
-                        <div class="product-info">
-                            <h3>Nose / Wincs</h3>
-                            <p>Front nose cone assembly</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Aerodynamic</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/visor-glass.jpg" alt="Visor Glass">
-                        </div>
-                        <div class="product-info">
-                            <h3>Visor Glass</h3>
-                            <p>High clarity visor glass with tint options</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Scratch Resistant</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/productspagesimages/chain-cover.jpg" alt="Chain Cover">
-                        </div>
-                        <div class="product-info">
-                            <h3>Chain Cover</h3>
-                            <p>Protective chain cover assembly</p>
-                            <div class="product-features">
-                                <span class="feature-tag">Protective</span>
-                            </div>
-                            <button class="inquire-btn">Inquire Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
+
+        <!-- Mudguard / Front Fender -->
+        <div class="product-category">
+          <div class="category-header">
+            <div class="category-icon">🛡️</div>
+            <h2>Mudguard / Front Fender</h2>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/mudguard-1.jpg"
+                  alt="Front Mudguard"
+                />
+                <span class="product-badge">New</span>
+              </div>
+              <div class="product-info">
+                <h3>Front Fender</h3>
+                <p>Protection from dirt and debris</p>
+                <div class="product-features">
+                  <span class="feature-tag">Impact Resistant</span>
+                  <span class="feature-tag">Easy Install</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/mudguard-2.jpg"
+                  alt="Racing Fender"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Front Fender</h3>
+                <p>Lightweight racing design</p>
+                <div class="product-features">
+                  <span class="feature-tag">Lightweight</span>
+                  <span class="feature-tag">Racing Style</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/mudguard-3.jpg"
+                  alt="Racing Fender"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Bike Splash Guard</h3>
+                <p>Motorcycle Front Splash Guard Strong Protection</p>
+                <div class="product-features">
+                  <span class="feature-tag">Strong</span>
+                  <span class="feature-tag">Sporty look</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rear Cowl / Tail Panel -->
+        <div class="product-category">
+          <div class="category-header">
+            <div class="category-icon">🎯</div>
+            <h2>Rear Cowl / Tail Panel</h2>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/tail-panel-1.jpg"
+                  alt="Tail Panel - Direct Fit"
+                />
+                <span class="product-badge">Best Seller</span>
+              </div>
+              <div class="product-info">
+                <h3>Tail Panel - Direct Fit</h3>
+                <p>Already joint tail panel, ready to install</p>
+                <div class="product-features">
+                  <span class="feature-tag">Pre-Assembled</span>
+                  <span class="feature-tag">Perfect Fit</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/tail-panel-2.jpg"
+                  alt="Sport Rear Cowl"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Sport Rear Cowl</h3>
+                <p>Sleek sporty design for modern bikes</p>
+                <div class="product-features">
+                  <span class="feature-tag">Modern Design</span>
+                  <span class="feature-tag">High Quality</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/tail-panel-3.jpg"
+                  alt="Sport Rear Cowl"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Tail Panel For Hero Splendor Plus</h3>
+                <p>Durable</p>
+                <div class="product-features">
+                  <span class="feature-tag">Top finishing</span>
+                  <span class="feature-tag">High Quality</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Panel / Side Box -->
+        <div class="product-category">
+          <div class="category-header">
+            <div class="category-icon">📦</div>
+            <h2>Side Panel / Side Box</h2>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/side-panel-1.jpg"
+                  alt="Side Panel - Chrome Fitted"
+                />
+                <span class="product-badge">Special</span>
+              </div>
+              <div class="product-info">
+                <h3>Side Panel - Chrome Fitted</h3>
+                <p>Monogram & chrome already fitted, direct to fit</p>
+                <div class="product-features">
+                  <span class="feature-tag">Chrome Fitted</span>
+                  <span class="feature-tag">Ready to Use</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/side-panel-2.jpg"
+                  alt="Standard Side Panel"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Standard Side Panel</h3>
+                <p>Classic design for all bike models</p>
+                <div class="product-features">
+                  <span class="feature-tag">Universal Fit</span>
+                  <span class="feature-tag">Durable</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Categories -->
+        <div class="product-category">
+          <div class="category-header">
+            <div class="category-icon">⚙️</div>
+            <h2>Other Essential Parts</h2>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/tpc-backplate.jpg"
+                  alt="T.P.C. Back Plate"
+                />
+              </div>
+              <div class="product-info">
+                <h3>T.P.C. Back Plate</h3>
+                <p>Foot trim & back plate assembly</p>
+                <div class="product-features">
+                  <span class="feature-tag">Precision Fit</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/nose-wincs.jpg"
+                  alt="Nose / Wincs"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Nose / Wincs</h3>
+                <p>Front nose cone assembly</p>
+                <div class="product-features">
+                  <span class="feature-tag">Aerodynamic</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/visor-glass.jpg"
+                  alt="Visor Glass"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Visor Glass</h3>
+                <p>High clarity visor glass with tint options</p>
+                <div class="product-features">
+                  <span class="feature-tag">Scratch Resistant</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="images/productspagesimages/chain-cover.jpg"
+                  alt="Chain Cover"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Chain Cover</h3>
+                <p>Protective chain cover assembly</p>
+                <div class="product-features">
+                  <span class="feature-tag">Protective</span>
+                </div>
+                <button class="inquire-btn">Inquire Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="images/LOGO RDL.png" alt="RDL Logo" class="footer-logo-img">
-                    </div>
-                    <p>Genuine Fiber Products - Non-Fading & Highly Durable</p>
-                    <p class="company-name">New Shivkrupa Automobiles</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>📍 G.No./H.No. -449/1B, A/p. Chincholi</li>
-                        <li>Tal: Madha, Dist: Solapur</li>
-                        <li>📞 9169919393</li>
-                        <li>✉️ newshivkrupa9850@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Our Values</h4>
-                    <ul>
-                        <li>✓ Customer Satisfaction</li>
-                        <li>✓ Superior Quality</li>
-                        <li>✓ Environmental Concern</li>
-                        <li>✓ Excellence & Innovation</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="images/LOGO RDL.png"
+                alt="RDL Logo"
+                class="footer-logo-img"
+              />
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 RDL Genuine Parts. All rights reserved.</p>
-                <p>Manufactured by New Shivkrupa Automobiles</p>
-            </div>
+            <p>Genuine Fiber Products - Non-Fading & Highly Durable</p>
+            <p class="company-name">New Shivkrupa Automobiles</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>📍 G.No./H.No. -449/1B, A/p. Chincholi</li>
+              <li>Tal: Madha, Dist: Solapur</li>
+              <li>📞 9169919393</li>
+              <li>✉️ newshivkrupa9850@gmail.com</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Values</h4>
+            <ul>
+              <li>✓ Customer Satisfaction</li>
+              <li>✓ Superior Quality</li>
+              <li>✓ Environmental Concern</li>
+              <li>✓ Excellence & Innovation</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 RDL Genuine Parts. All rights reserved.</p>
+          <p>Manufactured by New Shivkrupa Automobiles</p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-    
-        <!-- ⬇️ Add this small inline script before </body> (keeps your existing script.js) -->
-<script>
-/* Button ripple using CSS variables (no extra DOM / classes) */
-document.addEventListener('click', function(e){
-  const btn = e.target.closest('.inquire-btn');
-  if(!btn) return;
-  const rect = btn.getBoundingClientRect();
-  const x = ((e.clientX - rect.left) / rect.width) * 100;
-  const y = ((e.clientY - rect.top) / rect.height) * 100;
-  btn.style.setProperty('--rx', x + '%');
-  btn.style.setProperty('--ry', y + '%');
-  btn.style.setProperty('--ripple-opacity', .55);
 
-  // animate radius via background-size hack
-  let start = null;
-  const duration = 450;
-  function step(ts){
-    if(!start) start = ts;
-    const p = Math.min((ts - start)/duration, 1);
-    // expand by tweaking background-size via CSS shorthand trick
-    btn.style.backgroundImage =
-      `radial-gradient(circle ${Math.floor(p*240)}px at var(--rx) var(--ry), rgba(255,255,255,var(--ripple-opacity)) 0%, transparent 60%), linear-gradient(135deg, var(--primary-red), var(--light-red))`;
-    if(p < 1) requestAnimationFrame(step);
-    else btn.style.setProperty('--ripple-opacity', 0);
-  }
-  requestAnimationFrame(step);
-});
+    <script>
+      /* Button ripple using CSS variables (no extra DOM / classes) */
+      document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".inquire-btn");
+        if (!btn) return;
+        const rect = btn.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        btn.style.setProperty("--rx", x + "%");
+        btn.style.setProperty("--ry", y + "%");
+        btn.style.setProperty("--ripple-opacity", 0.55);
 
+        let start = null;
+        const duration = 450;
+        function step(ts) {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / duration, 1);
+          btn.style.backgroundImage = `radial-gradient(circle ${Math.floor(
+            p * 240
+          )}px at var(--rx) var(--ry), rgba(255,255,255,var(--ripple-opacity)) 0%, transparent 60%), linear-gradient(135deg, var(--primary-red), var(--light-red))`;
+          if (p < 1) requestAnimationFrame(step);
+          else btn.style.setProperty("--ripple-opacity", 0);
+        }
+        requestAnimationFrame(step);
+      });
 
-function onScroll(){
-  if(ticking) return;
-  ticking = true;
-  requestAnimationFrame(() => {
-    const y = window.scrollY || 0;
-    // move background a touch
-    hero.style.backgroundPosition = `50% ${40 + Math.min(y/30, 20)}%`;
-    ticking = false;
-  });
-}
-window.addEventListener('scroll', onScroll, {passive:true});
-</script>
+      const hero = document.querySelector(".products-hero");
+      let ticking = false;
 
-   
-</body>
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const y = window.scrollY || 0;
+          if (hero) {
+            hero.style.backgroundPosition = `50% ${40 + Math.min(y / 30, 20)}%`;
+          }
+          ticking = false;
+        });
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+    </script>
+  </body>
 </html>
