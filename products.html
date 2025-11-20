@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products - RDL Genuine Parts</title>
+    
+    <!-- ✅ PREMIUM GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css" />
     <style>
       /* Respect users who prefer less motion */
@@ -20,7 +26,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 70px;
+        margin-top: 80px;
         position: relative;
         overflow: hidden;
         will-change: background-position;
@@ -79,14 +85,18 @@
       }
 
       .products-hero h1 {
+        font-family: 'Poppins', sans-serif;
         font-size: 56px;
+        font-weight: 900;
         margin-bottom: 20px;
-        letter-spacing: 0.5px;
-        text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+        letter-spacing: -0.02em;
+        text-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
       }
 
       .products-hero p {
+        font-family: 'Inter', sans-serif;
         font-size: 20px;
+        font-weight: 500;
         opacity: 0.95;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
         transform: translateY(6px);
@@ -147,9 +157,11 @@
       }
 
       .category-header h2 {
+        font-family: 'Poppins', sans-serif;
         color: var(--primary-red);
         font-size: 32px;
-        letter-spacing: 0.3px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
       }
 
       /* --------------- Grid & Cards --------------- */
@@ -259,6 +271,7 @@
       }
 
       .product-badge {
+        font-family: 'Poppins', sans-serif;
         position: absolute;
         top: 15px;
         right: 15px;
@@ -267,7 +280,7 @@
         padding: 5px 15px;
         border-radius: 20px;
         font-size: 12px;
-        font-weight: bold;
+        font-weight: 700;
         box-shadow: 0 6px 18px rgba(193, 39, 45, 0.35);
         animation: popPulse 2.5s ease-in-out infinite;
       }
@@ -287,16 +300,21 @@
       }
 
       .product-info h3 {
+        font-family: 'Poppins', sans-serif;
         color: var(--dark-gray);
         font-size: 20px;
+        font-weight: 700;
         margin-bottom: 10px;
-        letter-spacing: 0.2px;
+        letter-spacing: -0.01em;
       }
 
       .product-info p {
+        font-family: 'Inter', sans-serif;
         color: var(--gray);
         margin-bottom: 15px;
         font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;
       }
 
       .product-features {
@@ -307,11 +325,13 @@
       }
 
       .feature-tag {
+        font-family: 'Inter', sans-serif;
         background: #ffe0e0;
         color: var(--primary-red);
         padding: 4px 12px;
         border-radius: 15px;
         font-size: 12px;
+        font-weight: 600;
         transition: transform 0.25s ease;
       }
 
@@ -320,13 +340,15 @@
       }
 
       .inquire-btn {
+        font-family: 'Poppins', sans-serif;
         width: 100%;
         padding: 12px;
         background: linear-gradient(135deg, var(--primary-red), var(--light-red));
         color: var(--white);
         border: none;
         border-radius: 8px;
-        font-weight: bold;
+        font-weight: 700;
+        font-size: 15px;
         cursor: pointer;
         transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
         position: relative;
@@ -439,11 +461,14 @@
       }
 
       .footer-col h4 {
+        font-family: 'Poppins', sans-serif;
         color: var(--white);
         margin-bottom: 20px;
         font-size: 20px;
+        font-weight: 700;
         position: relative;
         padding-bottom: 12px;
+        letter-spacing: -0.01em;
       }
 
       .footer-col h4::after {
@@ -462,10 +487,13 @@
       }
 
       .footer-col ul li {
+        font-family: 'Inter', sans-serif;
         margin-bottom: 12px;
         opacity: 0.9;
         transition: all 0.3s ease;
         line-height: 1.6;
+        font-weight: 400;
+        font-size: 15px;
       }
 
       .footer-col ul li:hover {
@@ -475,6 +503,7 @@
       }
 
       .footer-col a {
+        font-family: 'Inter', sans-serif;
         color: var(--white);
         text-decoration: none;
         transition: all 0.3s ease;
@@ -489,23 +518,29 @@
       }
 
       .footer-col p {
+        font-family: 'Inter', sans-serif;
         opacity: 0.9;
         line-height: 1.7;
         margin-bottom: 12px;
+        font-weight: 400;
+        font-size: 15px;
       }
 
       .company-name {
+        font-family: 'Poppins', sans-serif;
         color: var(--primary-red);
-        font-weight: bold;
+        font-weight: 700;
         margin-top: 15px;
         font-size: 16px;
       }
 
       .footer-bottom {
+        font-family: 'Inter', sans-serif;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 25px;
         text-align: center;
         opacity: 0.85;
+        font-weight: 400;
       }
 
       .footer-bottom p {
@@ -517,20 +552,21 @@
          COMPREHENSIVE MOBILE RESPONSIVE DESIGN
          ============================================ */
 
-      /* ============================================
-         BREAKPOINT: 1200px (Large Laptops/Desktops)
-         ============================================ */
+      /* 1200px - Large Laptops/Desktops */
       @media (max-width: 1200px) {
         .products-hero h1 {
           font-size: 50px;
+          font-weight: 900;
         }
 
         .products-hero p {
           font-size: 19px;
+          font-weight: 500;
         }
 
         .category-header h2 {
           font-size: 30px;
+          font-weight: 800;
         }
 
         .products-grid {
@@ -543,9 +579,7 @@
         }
       }
 
-      /* ============================================
-         BREAKPOINT: 1024px (Tablets Landscape)
-         ============================================ */
+      /* 1024px - Tablets Landscape */
       @media (max-width: 1024px) {
         .products-hero {
           height: 55vh;
@@ -554,10 +588,12 @@
 
         .products-hero h1 {
           font-size: 44px;
+          font-weight: 900;
         }
 
         .products-hero p {
           font-size: 18px;
+          font-weight: 500;
         }
 
         .products-section {
@@ -581,6 +617,7 @@
 
         .category-header h2 {
           font-size: 28px;
+          font-weight: 800;
         }
 
         .products-grid {
@@ -596,15 +633,18 @@
           padding: 22px;
         }
 
+        .product-info h3 {
+          font-size: 19px;
+          font-weight: 700;
+        }
+
         .footer-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 32px;
         }
       }
 
-      /* ============================================
-         BREAKPOINT: 768px (Tablets Portrait)
-         ============================================ */
+      /* 768px - Tablets Portrait */
       @media (max-width: 768px) {
         .products-hero {
           height: 50vh;
@@ -619,11 +659,13 @@
 
         .products-hero h1 {
           font-size: 38px;
+          font-weight: 900;
           margin-bottom: 16px;
         }
 
         .products-hero p {
           font-size: 17px;
+          font-weight: 500;
         }
 
         .products-section {
@@ -650,6 +692,7 @@
 
         .category-header h2 {
           font-size: 26px;
+          font-weight: 800;
         }
 
         .products-grid {
@@ -675,6 +718,7 @@
 
         .product-info h3 {
           font-size: 19px;
+          font-weight: 700;
         }
 
         .product-info p {
@@ -686,11 +730,13 @@
           right: 12px;
           padding: 5px 13px;
           font-size: 11px;
+          font-weight: 700;
         }
 
         .inquire-btn {
           padding: 11px;
           font-size: 15px;
+          font-weight: 700;
         }
 
         .footer {
@@ -704,6 +750,7 @@
 
         .footer-col h4 {
           font-size: 18px;
+          font-weight: 700;
           margin-bottom: 16px;
         }
 
@@ -726,9 +773,7 @@
         }
       }
 
-      /* ============================================
-         BREAKPOINT: 600px (Large Mobile Phones)
-         ============================================ */
+      /* 600px - Large Mobile Phones */
       @media (max-width: 600px) {
         .products-hero {
           height: 46vh;
@@ -737,11 +782,13 @@
 
         .products-hero h1 {
           font-size: 32px;
+          font-weight: 900;
           margin-bottom: 14px;
         }
 
         .products-hero p {
           font-size: 16px;
+          font-weight: 500;
         }
 
         .products-section {
@@ -767,6 +814,7 @@
 
         .category-header h2 {
           font-size: 22px;
+          font-weight: 800;
         }
 
         .products-grid {
@@ -788,6 +836,7 @@
 
         .product-info h3 {
           font-size: 17px;
+          font-weight: 700;
           margin-bottom: 8px;
         }
 
@@ -803,6 +852,7 @@
 
         .feature-tag {
           font-size: 11px;
+          font-weight: 600;
           padding: 4px 10px;
         }
 
@@ -811,11 +861,13 @@
           right: 10px;
           padding: 4px 11px;
           font-size: 10px;
+          font-weight: 700;
         }
 
         .inquire-btn {
           padding: 10px;
           font-size: 14px;
+          font-weight: 700;
         }
 
         .footer {
@@ -834,6 +886,7 @@
 
         .footer-col h4 {
           font-size: 17px;
+          font-weight: 700;
           margin-bottom: 14px;
         }
 
@@ -860,9 +913,7 @@
         }
       }
 
-      /* ============================================
-         BREAKPOINT: 480px (Standard Mobile Phones)
-         ============================================ */
+      /* 480px - Standard Mobile Phones */
       @media (max-width: 480px) {
         .products-hero {
           height: 44vh;
@@ -871,11 +922,13 @@
 
         .products-hero h1 {
           font-size: 28px;
+          font-weight: 900;
           margin-bottom: 12px;
         }
 
         .products-hero p {
           font-size: 15px;
+          font-weight: 500;
         }
 
         .products-section {
@@ -901,6 +954,7 @@
 
         .category-header h2 {
           font-size: 20px;
+          font-weight: 800;
         }
 
         .products-grid {
@@ -926,6 +980,7 @@
 
         .product-info h3 {
           font-size: 16px;
+          font-weight: 700;
           margin-bottom: 7px;
         }
 
@@ -941,6 +996,7 @@
 
         .feature-tag {
           font-size: 10px;
+          font-weight: 600;
           padding: 3px 9px;
         }
 
@@ -949,11 +1005,13 @@
           right: 8px;
           padding: 3px 10px;
           font-size: 10px;
+          font-weight: 700;
         }
 
         .inquire-btn {
           padding: 9px;
           font-size: 13px;
+          font-weight: 700;
         }
 
         .footer {
@@ -966,6 +1024,7 @@
 
         .footer-col h4 {
           font-size: 16px;
+          font-weight: 700;
           margin-bottom: 12px;
         }
 
@@ -993,9 +1052,7 @@
         }
       }
 
-      /* ============================================
-         BREAKPOINT: 360px (Small Mobile Phones)
-         ============================================ */
+      /* 360px - Small Mobile Phones */
       @media (max-width: 360px) {
         .products-hero {
           height: 40vh;
@@ -1003,11 +1060,13 @@
 
         .products-hero h1 {
           font-size: 24px;
+          font-weight: 900;
           margin-bottom: 10px;
         }
 
         .products-hero p {
           font-size: 14px;
+          font-weight: 500;
         }
 
         .products-section {
@@ -1032,6 +1091,7 @@
 
         .category-header h2 {
           font-size: 18px;
+          font-weight: 800;
         }
 
         .products-grid {
@@ -1048,6 +1108,7 @@
 
         .product-info h3 {
           font-size: 15px;
+          font-weight: 700;
           margin-bottom: 6px;
         }
 
@@ -1063,6 +1124,7 @@
 
         .feature-tag {
           font-size: 9px;
+          font-weight: 600;
           padding: 3px 8px;
         }
 
@@ -1071,11 +1133,13 @@
           right: 6px;
           padding: 3px 8px;
           font-size: 9px;
+          font-weight: 700;
         }
 
         .inquire-btn {
           padding: 8px;
           font-size: 12px;
+          font-weight: 700;
         }
 
         .footer {
@@ -1088,6 +1152,7 @@
 
         .footer-col h4 {
           font-size: 15px;
+          font-weight: 700;
           margin-bottom: 10px;
         }
 
@@ -1114,9 +1179,7 @@
         }
       }
 
-      /* ============================================
-         LANDSCAPE MODE OPTIMIZATION
-         ============================================ */
+      /* Landscape Mode Optimization */
       @media (max-height: 500px) and (orientation: landscape) {
         .products-hero {
           height: 80vh;
@@ -1124,10 +1187,12 @@
 
         .products-hero h1 {
           font-size: 32px;
+          font-weight: 900;
         }
 
         .products-hero p {
           font-size: 16px;
+          font-weight: 500;
         }
 
         .category-header {
@@ -1136,9 +1201,7 @@
         }
       }
 
-      /* ============================================
-         PERFORMANCE OPTIMIZATION FOR MOBILE
-         ============================================ */
+      /* Performance Optimization for Mobile */
       @media (max-width: 768px) {
         .product-card {
           will-change: auto;

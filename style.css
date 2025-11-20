@@ -1,6 +1,7 @@
 /* ========================================
-   RDL GENUINE PARTS - ENHANCED RESPONSIVE STYLES
-   Optimized for Mobile, Tablet, and Desktop
+   RDL GENUINE PARTS - PREMIUM ENHANCED STYLES
+   Beautiful Typography & Mobile Optimized
+   Google Fonts: Inter + Poppins
 ======================================== */
 
 * {
@@ -26,11 +27,25 @@ html {
 }
 
 body {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+    /* ✅ PREMIUM FONT STACK */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
     overflow-x: hidden;
     background: var(--white);
+    /* ✅ Premium font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+}
+
+/* ✅ Premium Typography for Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 /* Custom Scrollbar */
@@ -58,21 +73,22 @@ body {
 }
 
 /* ========================================
-   NAVIGATION - WHITE THEME WITH LOGO
+   NAVIGATION - PREMIUM DESIGN
 ======================================== */
 
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--white);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
     z-index: 1000;
     transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.12);
 }
 
 .nav-container {
@@ -125,10 +141,11 @@ body {
 }
 
 .logo-text {
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .logo-title {
+    font-family: 'Poppins', sans-serif;
     font-size: 22px;
     font-weight: 800;
     letter-spacing: -0.03em;
@@ -137,10 +154,11 @@ body {
 }
 
 .logo-subtitle {
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
     color: #6b7280;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
 }
 
 .nav-menu {
@@ -155,6 +173,7 @@ body {
 }
 
 .nav-menu a {
+    font-family: 'Inter', sans-serif;
     color: var(--dark-gray);
     text-decoration: none;
     font-weight: 600;
@@ -221,14 +240,18 @@ body {
 }
 
 .quality-section h4 {
+    font-family: 'Poppins', sans-serif;
     color: var(--primary-red);
     font-size: 16px;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
 .quality-section p {
+    font-family: 'Inter', sans-serif;
     color: var(--gray);
     font-size: 13px;
+    font-weight: 400;
     line-height: 1.6;
 }
 
@@ -315,19 +338,23 @@ body {
 }
 
 .slide-content h1 {
+    font-family: 'Poppins', sans-serif;
     font-size: 64px;
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    letter-spacing: 3px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    letter-spacing: -0.02em;
     animation: slideInDown 1s ease;
 }
 
 .slide-content p {
+    font-family: 'Inter', sans-serif;
     font-size: 24px;
+    font-weight: 500;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
     animation: slideInUp 1s ease 0.3s both;
+    letter-spacing: 0.01em;
 }
 
 .slide-content .cta-button {
@@ -335,23 +362,24 @@ body {
 }
 
 .cta-button {
+    font-family: 'Poppins', sans-serif;
     display: inline-block;
-    padding: 15px 40px;
+    padding: 16px 42px;
     background: var(--primary-red);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 18px;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(193, 39, 45, 0.4);
+    box-shadow: 0 8px 25px rgba(193, 39, 45, 0.4);
     min-height: 44px;
-    min-width: 44px;
+    letter-spacing: 0.02em;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(193, 39, 45, 0.6);
+    box-shadow: 0 12px 35px rgba(193, 39, 45, 0.6);
     background: var(--dark-red);
 }
 
@@ -486,13 +514,16 @@ body {
 ======================================== */
 
 .section-title {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 42px;
+    font-size: 48px;
+    font-weight: 800;
     color: var(--primary-red);
     margin-bottom: 60px;
     position: relative;
     padding-bottom: 20px;
     animation: fadeInScale 0.8s ease;
+    letter-spacing: -0.02em;
 }
 
 .section-title::after {
@@ -550,13 +581,19 @@ body {
 }
 
 .showcase-item h3 {
+    font-family: 'Poppins', sans-serif;
     color: var(--primary-red);
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 700;
     margin-bottom: 15px;
+    letter-spacing: -0.01em;
 }
 
 .showcase-item p {
+    font-family: 'Inter', sans-serif;
     color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.8;
 }
 
@@ -597,13 +634,19 @@ body {
 }
 
 .benefit-box h3 {
+    font-family: 'Poppins', sans-serif;
     color: #343a40;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 15px;
+    letter-spacing: -0.01em;
 }
 
 .benefit-box p {
+    font-family: 'Inter', sans-serif;
     color: #6c757d;
+    font-size: 15px;
+    font-weight: 400;
     line-height: 1.7;
 }
 
@@ -679,9 +722,10 @@ body {
 }
 
 .category-overlay span {
+    font-family: 'Poppins', sans-serif;
     color: var(--white);
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
     padding: 12px 30px;
     border: 2px solid var(--white);
     border-radius: 50px;
@@ -700,10 +744,13 @@ body {
 }
 
 .category-card h3 {
+    font-family: 'Poppins', sans-serif;
     padding: 20px;
     text-align: center;
     color: var(--dark-gray);
-    font-size: 18px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 /* Dealer Button Section */
@@ -733,27 +780,34 @@ body {
 }
 
 .dealer-section h2 {
-    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
     margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
 .dealer-section p {
-    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
     margin-bottom: 30px;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .dealer-btn {
+    font-family: 'Poppins', sans-serif;
     display: inline-block;
-    padding: 15px 40px;
+    padding: 16px 42px;
     background: var(--white);
     color: var(--primary-red);
     text-decoration: none;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 18px;
     transition: all 0.3s ease;
     min-height: 44px;
+    letter-spacing: 0.02em;
 }
 
 .dealer-btn:hover {
@@ -788,19 +842,22 @@ body {
 }
 
 .stat-number {
-    font-size: 48px;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 54px;
+    font-weight: 900;
     color: var(--primary-red);
     margin-bottom: 10px;
+    letter-spacing: -0.02em;
 }
 
 .stat-label {
+    font-family: 'Inter', sans-serif;
     color: var(--gray);
     font-size: 16px;
+    font-weight: 500;
 }
 
 /* Why Choose Section */
-
 .why-choose {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
@@ -815,11 +872,10 @@ body {
     background: var(--white);
 }
 
-/* NEW: Grid container for benefit cards */
 .benefits-grid,
 .why-choose .showcase-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin-top: 40px;
 }
@@ -839,20 +895,28 @@ body {
 }
 
 .benefit-number {
-    font-size: 48px;
-    font-weight: bold;
-    color: rgba(255,255,255,0.3);
+    font-family: 'Poppins', sans-serif;
+    font-size: 54px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.35);
     margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
 .benefit-card h3 {
-    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
     margin-bottom: 15px;
+    letter-spacing: -0.01em;
 }
 
 .benefit-card p {
-    opacity: 0.9;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.95;
     line-height: 1.8;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 /* Footer */
@@ -860,6 +924,31 @@ body {
     color: var(--white);
     padding: 60px 20px 20px;
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        1200px 400px at 10% 0%,
+        rgba(193, 39, 45, 0.08),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 300px at 90% 100%,
+        rgba(193, 39, 45, 0.08),
+        transparent 50%
+      );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer .container {
+    position: relative;
+    z-index: 1;
 }
 
 .footer-grid {
@@ -879,12 +968,29 @@ body {
 .footer-logo-img {
     height: 70px;
     width: 180px;
+    filter: brightness(1.1);
 }
 
 .footer-col h4 {
-    color: var(--primary-red);
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
     margin-bottom: 20px;
     font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-col h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-red);
+    border-radius: 2px;
 }
 
 .footer-col ul {
@@ -892,50 +998,72 @@ body {
 }
 
 .footer-col ul li {
-    margin-bottom: 10px;
-    opacity: 0.8;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 12px;
+    opacity: 0.9;
     transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .footer-col ul li:hover {
     opacity: 1;
     transform: translateX(5px);
+    color: var(--primary-red);
 }
 
 .footer-col a {
+    font-family: 'Inter', sans-serif;
     color: var(--white);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
     min-height: 44px;
-    line-height: 44px;
+    line-height: 1.6;
+    padding: 8px 0;
 }
 
 .footer-col a:hover {
     color: var(--primary-red);
 }
 
+.footer-col p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
 .company-name {
+    font-family: 'Poppins', sans-serif;
     color: var(--primary-red);
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 16px;
 }
 
 .footer-bottom {
+    font-family: 'Inter', sans-serif;
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
+    padding-top: 25px;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.85;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin-bottom: 5px;
 }
 
 /* ========================================
    COMPREHENSIVE MOBILE RESPONSIVE DESIGN
-   Progressive Enhancement Strategy
 ======================================== */
 
-/* ============================================
-   BREAKPOINT: 1200px (Large Laptops/Desktops)
-============================================ */
+/* 1200px - Large Laptops/Desktops */
 @media (max-width: 1200px) {
     .container, .nav-container {
         max-width: 100%;
@@ -949,11 +1077,13 @@ body {
 
     .logo-title {
         font-size: 20px;
+        font-weight: 800;
     }
 
     .nav-menu a {
         padding: 10px 16px;
         font-size: 15px;
+        font-weight: 600;
     }
 
     .dropdown-menu {
@@ -962,7 +1092,6 @@ body {
         gap: 18px;
     }
 
-    /* Hero adjustments */
     .hero {
         height: 90vh;
     }
@@ -973,15 +1102,17 @@ body {
 
     .slide-content h1 {
         font-size: 56px;
+        font-weight: 900;
     }
 
     .slide-content p {
         font-size: 22px;
+        font-weight: 500;
     }
 
-    /* Sections */
     .section-title {
-        font-size: 38px;
+        font-size: 42px;
+        font-weight: 800;
     }
 
     .showcase-grid,
@@ -990,7 +1121,6 @@ body {
         gap: 32px;
     }
 
-    /* Why Choose - 4 cards */
     .benefits-grid,
     .why-choose .showcase-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1002,17 +1132,17 @@ body {
     }
     
     .benefit-card h3 {
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 700;
     }
     
     .benefit-number {
-        font-size: 44px;
+        font-size: 50px;
+        font-weight: 900;
     }
 }
 
-/* ============================================
-   BREAKPOINT: 1024px (Tablets Landscape)
-============================================ */
+/* 1024px - Tablets Landscape */
 @media (max-width: 1024px) {
     .nav-container {
         height: 76px;
@@ -1028,8 +1158,13 @@ body {
         height: 50px;
     }
 
+    .logo-title {
+        font-weight: 800;
+    }
+
     .nav-menu a {
         font-size: 14px;
+        font-weight: 600;
         padding: 10px 14px;
     }
 
@@ -1045,13 +1180,13 @@ body {
 
     .quality-section h4 {
         font-size: 15px;
+        font-weight: 700;
     }
 
     .quality-section p {
         font-size: 12px;
     }
 
-    /* Hero */
     .hero {
         height: 80vh;
         margin-top: 76px;
@@ -1059,19 +1194,21 @@ body {
 
     .slide-content h1 {
         font-size: 48px;
-        letter-spacing: 2px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
     }
 
     .slide-content p {
         font-size: 20px;
+        font-weight: 500;
     }
 
     .cta-button {
         padding: 14px 36px;
         font-size: 17px;
+        font-weight: 700;
     }
 
-    /* Sections */
     .showcase,
     .categories,
     .dealer-benefits,
@@ -1083,7 +1220,8 @@ body {
     }
 
     .section-title {
-        font-size: 36px;
+        font-size: 38px;
+        font-weight: 800;
         margin-bottom: 50px;
     }
 
@@ -1097,23 +1235,35 @@ body {
         padding: 32px 24px;
     }
 
+    .showcase-item h3 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .benefit-box h3 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
     .dealer-section h2 {
-        font-size: 32px;
+        font-size: 36px;
+        font-weight: 800;
     }
 
     .dealer-section p {
-        font-size: 17px;
+        font-size: 18px;
+        font-weight: 500;
     }
 
     .stat-number {
-        font-size: 44px;
+        font-size: 48px;
+        font-weight: 900;
     }
 
     .footer-grid {
         gap: 32px;
     }
 
-    /* Why Choose - 2x2 grid */
     .benefits-grid,
     .why-choose .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1123,13 +1273,20 @@ body {
     .benefit-card {
         padding: 32px 24px;
     }
+
+    .benefit-card h3 {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .benefit-number {
+        font-size: 48px;
+        font-weight: 900;
+    }
 }
 
-/* ============================================
-   BREAKPOINT: 768px (Tablets Portrait) - MAJOR MOBILE SHIFT
-============================================ */
+/* 768px - Tablets Portrait - MAJOR MOBILE SHIFT */
 @media (max-width: 768px) {
-    /* ==== NAVIGATION MOBILE MENU ==== */
     .hamburger {
         display: flex;
     }
@@ -1159,19 +1316,20 @@ body {
     }
 
     .nav-menu a {
+        font-family: 'Inter', sans-serif;
         padding: 16px 24px;
         display: block;
         font-size: 16px;
+        font-weight: 600;
         border-bottom: 1px solid var(--off-white);
         min-height: 48px;
     }
 
-    /* ✅ HIDE QUALITY DROPDOWN ON MOBILE */
+    /* Hide Quality Dropdown on Mobile */
     .dropdown {
         display: none !important;
     }
 
-    /* ==== HERO SECTION ==== */
     .hero {
         height: 70vh;
         margin-top: 76px;
@@ -1191,19 +1349,22 @@ body {
     }
 
     .slide-content h1 {
-        font-size: 36px;
-        letter-spacing: 1px;
+        font-size: 38px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
         margin-bottom: 16px;
     }
 
     .slide-content p {
         font-size: 18px;
+        font-weight: 500;
         margin-bottom: 24px;
     }
 
     .cta-button {
         padding: 13px 32px;
         font-size: 16px;
+        font-weight: 700;
     }
 
     .slider-dots {
@@ -1222,9 +1383,9 @@ body {
         border-radius: 4px;
     }
 
-    /* ==== SECTION TITLES ==== */
     .section-title {
-        font-size: 32px;
+        font-size: 34px;
+        font-weight: 800;
         margin-bottom: 40px;
     }
 
@@ -1233,7 +1394,6 @@ body {
         height: 3px;
     }
 
-    /* ==== SHOWCASE / PRODUCTS ==== */
     .showcase {
         padding: 60px 16px;
     }
@@ -1252,14 +1412,15 @@ body {
     }
 
     .showcase-item h3 {
-        font-size: 22px;
+        font-size: 23px;
+        font-weight: 700;
     }
 
     .showcase-item p {
         font-size: 15px;
+        font-weight: 400;
     }
 
-    /* ==== CATEGORIES ==== */
     .categories {
         padding: 60px 16px;
     }
@@ -1275,15 +1436,16 @@ body {
 
     .category-card h3 {
         font-size: 18px;
+        font-weight: 700;
         padding: 18px;
     }
 
     .category-overlay span {
         font-size: 16px;
+        font-weight: 700;
         padding: 10px 26px;
     }
 
-    /* ==== DEALER BENEFITS ==== */
     .dealer-benefits {
         padding: 60px 16px;
     }
@@ -1302,35 +1464,38 @@ body {
     }
 
     .benefit-box h3 {
-        font-size: 19px;
+        font-size: 20px;
+        font-weight: 700;
     }
 
     .benefit-box p {
         font-size: 15px;
+        font-weight: 400;
     }
 
-    /* ==== DEALER CTA SECTION ==== */
     .dealer-section {
         padding: 60px 16px;
         margin-top: 50px;
     }
 
     .dealer-section h2 {
-        font-size: 28px;
+        font-size: 32px;
+        font-weight: 800;
         margin-bottom: 16px;
     }
 
     .dealer-section p {
-        font-size: 16px;
+        font-size: 17px;
+        font-weight: 500;
         margin-bottom: 24px;
     }
 
     .dealer-btn {
         padding: 13px 32px;
         font-size: 16px;
+        font-weight: 700;
     }
 
-    /* ==== STATS ==== */
     .stats {
         padding: 60px 16px;
     }
@@ -1345,23 +1510,24 @@ body {
     }
 
     .stat-number {
-        font-size: 40px;
+        font-size: 44px;
+        font-weight: 900;
     }
 
     .stat-label {
         font-size: 14px;
+        font-weight: 500;
     }
 
-    /* ==== WHY CHOOSE ==== */
     .why-choose {
         padding: 60px 16px;
     }
 
     .why-choose .section-title {
-        font-size: 32px;
+        font-size: 34px;
+        font-weight: 800;
     }
 
-    /* Why Choose - 2 cards per row */
     .benefits-grid,
     .why-choose .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1373,19 +1539,21 @@ body {
     }
 
     .benefit-number {
-        font-size: 42px;
+        font-size: 46px;
+        font-weight: 900;
         margin-bottom: 16px;
     }
 
     .benefit-card h3 {
-        font-size: 19px;
+        font-size: 20px;
+        font-weight: 700;
     }
 
     .benefit-card p {
         font-size: 15px;
+        font-weight: 400;
     }
 
-    /* ==== FOOTER ==== */
     .footer {
         padding: 50px 16px 16px;
     }
@@ -1397,12 +1565,14 @@ body {
 
     .footer-col h4 {
         font-size: 18px;
+        font-weight: 700;
         margin-bottom: 16px;
     }
 
     .footer-col ul li {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         font-size: 14px;
+        font-weight: 400;
     }
 
     .footer-logo-img {
@@ -1412,13 +1582,12 @@ body {
 
     .footer-bottom {
         font-size: 13px;
-        padding-top: 16px;
+        font-weight: 400;
+        padding-top: 20px;
     }
 }
 
-/* ============================================
-   BREAKPOINT: 600px (Large Mobile Phones)
-============================================ */
+/* 600px - Large Mobile Phones */
 @media (max-width: 600px) {
     .nav-container {
         height: 70px;
@@ -1432,13 +1601,14 @@ body {
 
     .logo-title {
         font-size: 19px;
+        font-weight: 800;
     }
 
     .logo-subtitle {
         font-size: 12px;
+        font-weight: 600;
     }
 
-    /* Hero */
     .hero {
         height: 65vh;
         margin-top: 70px;
@@ -1449,17 +1619,20 @@ body {
     }
 
     .slide-content h1 {
-        font-size: 30px;
+        font-size: 32px;
+        font-weight: 900;
     }
 
     .slide-content p {
         font-size: 16px;
+        font-weight: 500;
         margin-bottom: 20px;
     }
 
     .cta-button {
-        padding: 12px 28px;
-        font-size: 15px;
+        padding: 14px 36px;
+        font-size: 16px;
+        font-weight: 700;
     }
 
     .slider-dots {
@@ -1476,9 +1649,9 @@ body {
         width: 24px;
     }
 
-    /* Sections */
     .section-title {
-        font-size: 28px;
+        font-size: 30px;
+        font-weight: 800;
         margin-bottom: 36px;
     }
 
@@ -1511,7 +1684,12 @@ body {
     }
 
     .showcase-item h3 {
-        font-size: 20px;
+        font-size: 21px;
+        font-weight: 700;
+    }
+
+    .showcase-item p {
+        font-size: 15px;
     }
 
     .category-image {
@@ -1521,6 +1699,7 @@ body {
     .category-card h3 {
         padding: 16px;
         font-size: 17px;
+        font-weight: 700;
     }
 
     .benefit-icon {
@@ -1532,20 +1711,28 @@ body {
     }
 
     .benefit-box h3 {
-        font-size: 18px;
+        font-size: 19px;
+        font-weight: 700;
+    }
+
+    .benefit-box p {
+        font-size: 14px;
     }
 
     .dealer-section h2 {
-        font-size: 26px;
+        font-size: 30px;
+        font-weight: 800;
     }
 
     .dealer-section p {
-        font-size: 15px;
+        font-size: 17px;
+        font-weight: 500;
     }
 
     .dealer-btn {
-        padding: 12px 28px;
-        font-size: 15px;
+        padding: 14px 36px;
+        font-size: 16px;
+        font-weight: 700;
     }
 
     .stats-grid {
@@ -1554,14 +1741,15 @@ body {
     }
 
     .stat-number {
-        font-size: 36px;
+        font-size: 42px;
+        font-weight: 900;
     }
 
     .stat-label {
         font-size: 13px;
+        font-weight: 500;
     }
 
-    /* Why Choose - 1 card per row */
     .benefits-grid,
     .why-choose .showcase-grid {
         grid-template-columns: 1fr;
@@ -1573,14 +1761,19 @@ body {
     }
 
     .benefit-number {
-        font-size: 38px;
+        font-size: 42px;
+        font-weight: 900;
     }
 
     .benefit-card h3 {
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 700;
     }
 
-    /* Footer */
+    .benefit-card p {
+        font-size: 14px;
+    }
+
     .footer {
         padding: 46px 14px 14px;
     }
@@ -1588,10 +1781,21 @@ body {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        text-align: center;
     }
 
     .footer-col h4 {
         font-size: 17px;
+        font-weight: 700;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-logo {
+        justify-content: center;
     }
 
     .footer-logo-img {
@@ -1600,9 +1804,7 @@ body {
     }
 }
 
-/* ============================================
-   BREAKPOINT: 480px (Standard Mobile Phones)
-============================================ */
+/* 480px - Standard Mobile Phones */
 @media (max-width: 480px) {
     .nav-container {
         height: 68px;
@@ -1616,10 +1818,12 @@ body {
 
     .logo-title {
         font-size: 18px;
+        font-weight: 800;
     }
 
     .logo-subtitle {
         font-size: 11px;
+        font-weight: 600;
     }
 
     .logo-link {
@@ -1639,10 +1843,10 @@ body {
     .nav-menu a {
         padding: 14px 20px;
         font-size: 15px;
+        font-weight: 600;
         min-height: 46px;
     }
 
-    /* Hero - PERFECT MOBILE FIT */
     .hero {
         height: 60vh;
         margin-top: 68px;
@@ -1664,20 +1868,23 @@ body {
     }
 
     .slide-content h1 {
-        font-size: 26px;
-        letter-spacing: 0.5px;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -0.01em;
         margin-bottom: 12px;
     }
 
     .slide-content p {
         font-size: 15px;
+        font-weight: 500;
         margin-bottom: 18px;
         line-height: 1.5;
     }
 
     .cta-button {
-        padding: 11px 26px;
-        font-size: 14px;
+        padding: 13px 32px;
+        font-size: 15px;
+        font-weight: 700;
     }
 
     .slider-dots {
@@ -1696,9 +1903,9 @@ body {
         border-radius: 3px;
     }
 
-    /* Section Titles */
     .section-title {
-        font-size: 26px;
+        font-size: 28px;
+        font-weight: 800;
         margin-bottom: 32px;
         padding-bottom: 16px;
     }
@@ -1708,7 +1915,6 @@ body {
         height: 3px;
     }
 
-    /* All Sections */
     .showcase,
     .categories,
     .dealer-benefits,
@@ -1718,7 +1924,6 @@ body {
         padding: 46px 12px;
     }
 
-    /* Showcase/Products */
     .showcase-grid,
     .category-grid,
     .benefits-grid {
@@ -1736,16 +1941,17 @@ body {
     }
 
     .showcase-item h3 {
-        font-size: 19px;
+        font-size: 20px;
+        font-weight: 700;
         margin-bottom: 12px;
     }
 
     .showcase-item p {
         font-size: 14px;
+        font-weight: 400;
         line-height: 1.6;
     }
 
-    /* Categories */
     .category-image {
         height: 180px;
     }
@@ -1753,14 +1959,15 @@ body {
     .category-card h3 {
         padding: 14px;
         font-size: 16px;
+        font-weight: 700;
     }
 
     .category-overlay span {
         font-size: 14px;
+        font-weight: 700;
         padding: 9px 22px;
     }
 
-    /* Benefits */
     .benefit-box {
         padding: 22px 16px;
         border-radius: 10px;
@@ -1772,37 +1979,40 @@ body {
     }
 
     .benefit-box h3 {
-        font-size: 17px;
+        font-size: 18px;
+        font-weight: 700;
         margin-bottom: 12px;
     }
 
     .benefit-box p {
         font-size: 14px;
+        font-weight: 400;
         line-height: 1.6;
     }
 
-    /* Dealer CTA */
     .dealer-section {
         padding: 50px 12px;
         margin-top: 40px;
     }
 
     .dealer-section h2 {
-        font-size: 24px;
+        font-size: 26px;
+        font-weight: 800;
         margin-bottom: 14px;
     }
 
     .dealer-section p {
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 500;
         margin-bottom: 20px;
     }
 
     .dealer-btn {
-        padding: 11px 26px;
-        font-size: 14px;
+        padding: 13px 32px;
+        font-size: 15px;
+        font-weight: 700;
     }
 
-    /* Stats */
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -1813,36 +2023,39 @@ body {
     }
 
     .stat-number {
-        font-size: 32px;
+        font-size: 38px;
+        font-weight: 900;
         margin-bottom: 8px;
     }
 
     .stat-label {
         font-size: 13px;
+        font-weight: 500;
     }
 
-    /* Why Choose */
     .benefit-card {
         padding: 22px 16px;
         border-radius: 10px;
     }
 
     .benefit-number {
-        font-size: 36px;
+        font-size: 38px;
+        font-weight: 900;
         margin-bottom: 14px;
     }
 
     .benefit-card h3 {
-        font-size: 18px;
+        font-size: 19px;
+        font-weight: 700;
         margin-bottom: 12px;
     }
 
     .benefit-card p {
         font-size: 14px;
+        font-weight: 400;
         line-height: 1.6;
     }
 
-    /* Footer */
     .footer {
         padding: 42px 12px 12px;
     }
@@ -1853,17 +2066,19 @@ body {
 
     .footer-col h4 {
         font-size: 16px;
+        font-weight: 700;
         margin-bottom: 14px;
     }
 
     .footer-col ul li {
-        margin-bottom: 7px;
+        margin-bottom: 9px;
         font-size: 13px;
+        font-weight: 400;
     }
 
     .footer-col a {
         min-height: 40px;
-        line-height: 40px;
+        padding: 6px 0;
     }
 
     .footer-logo-img {
@@ -1873,13 +2088,12 @@ body {
 
     .footer-bottom {
         font-size: 12px;
-        padding-top: 14px;
+        font-weight: 400;
+        padding-top: 16px;
     }
 }
 
-/* ============================================
-   BREAKPOINT: 360px (Small Mobile Phones)
-============================================ */
+/* 360px - Small Mobile Phones */
 @media (max-width: 360px) {
     .nav-container {
         padding: 0 10px;
@@ -1892,10 +2106,12 @@ body {
 
     .logo-title {
         font-size: 16px;
+        font-weight: 800;
     }
 
     .logo-subtitle {
         font-size: 10px;
+        font-weight: 600;
     }
 
     .logo-link {
@@ -1910,10 +2126,10 @@ body {
     .nav-menu a {
         padding: 13px 18px;
         font-size: 14px;
+        font-weight: 600;
         min-height: 44px;
     }
 
-    /* Hero - ULTRA COMPACT */
     .hero {
         height: 56vh;
     }
@@ -1932,19 +2148,22 @@ body {
     }
 
     .slide-content h1 {
-        font-size: 22px;
+        font-size: 24px;
+        font-weight: 900;
         letter-spacing: 0px;
         margin-bottom: 10px;
     }
 
     .slide-content p {
-        font-size: 13px;
+        font-size: 14px;
+        font-weight: 500;
         margin-bottom: 16px;
     }
 
     .cta-button {
-        padding: 10px 22px;
-        font-size: 13px;
+        padding: 12px 28px;
+        font-size: 14px;
+        font-weight: 700;
         border-radius: 40px;
     }
 
@@ -1963,9 +2182,9 @@ body {
         width: 20px;
     }
 
-    /* Section Titles */
     .section-title {
-        font-size: 24px;
+        font-size: 26px;
+        font-weight: 800;
         margin-bottom: 28px;
         padding-bottom: 14px;
     }
@@ -1975,7 +2194,6 @@ body {
         height: 2.5px;
     }
 
-    /* All Sections */
     .showcase,
     .categories,
     .dealer-benefits,
@@ -1985,7 +2203,6 @@ body {
         padding: 40px 10px;
     }
 
-    /* Cards */
     .showcase-item,
     .benefit-box,
     .category-card,
@@ -2004,12 +2221,14 @@ body {
     }
 
     .showcase-item h3 {
-        font-size: 18px;
+        font-size: 19px;
+        font-weight: 700;
         margin-bottom: 10px;
     }
 
     .showcase-item p {
         font-size: 13px;
+        font-weight: 400;
     }
 
     .category-image {
@@ -2019,10 +2238,12 @@ body {
     .category-card h3 {
         padding: 12px;
         font-size: 15px;
+        font-weight: 700;
     }
 
     .category-overlay span {
         font-size: 13px;
+        font-weight: 700;
         padding: 8px 20px;
     }
 
@@ -2036,12 +2257,14 @@ body {
     }
 
     .benefit-box h3 {
-        font-size: 16px;
+        font-size: 17px;
+        font-weight: 700;
         margin-bottom: 10px;
     }
 
     .benefit-box p {
         font-size: 13px;
+        font-weight: 400;
     }
 
     .dealer-section {
@@ -2050,18 +2273,21 @@ body {
     }
 
     .dealer-section h2 {
-        font-size: 22px;
+        font-size: 24px;
+        font-weight: 800;
         margin-bottom: 12px;
     }
 
     .dealer-section p {
-        font-size: 13px;
+        font-size: 14px;
+        font-weight: 500;
         margin-bottom: 18px;
     }
 
     .dealer-btn {
-        padding: 10px 24px;
-        font-size: 13px;
+        padding: 12px 28px;
+        font-size: 14px;
+        font-weight: 700;
     }
 
     .stats-grid {
@@ -2073,12 +2299,14 @@ body {
     }
 
     .stat-number {
-        font-size: 28px;
+        font-size: 36px;
+        font-weight: 900;
         margin-bottom: 6px;
     }
 
     .stat-label {
         font-size: 12px;
+        font-weight: 500;
     }
 
     .benefit-card {
@@ -2086,20 +2314,22 @@ body {
     }
 
     .benefit-number {
-        font-size: 32px;
+        font-size: 36px;
+        font-weight: 900;
         margin-bottom: 12px;
     }
 
     .benefit-card h3 {
-        font-size: 17px;
+        font-size: 18px;
+        font-weight: 700;
         margin-bottom: 10px;
     }
 
     .benefit-card p {
         font-size: 13px;
+        font-weight: 400;
     }
 
-    /* Footer */
     .footer {
         padding: 38px 10px 10px;
     }
@@ -2110,17 +2340,19 @@ body {
 
     .footer-col h4 {
         font-size: 15px;
+        font-weight: 700;
         margin-bottom: 12px;
     }
 
     .footer-col ul li {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         font-size: 12px;
+        font-weight: 400;
     }
 
     .footer-col a {
         min-height: 38px;
-        line-height: 38px;
+        padding: 5px 0;
     }
 
     .footer-logo-img {
@@ -2130,13 +2362,12 @@ body {
 
     .footer-bottom {
         font-size: 11px;
+        font-weight: 400;
         padding-top: 12px;
     }
 }
 
-/* ============================================
-   LANDSCAPE MODE OPTIMIZATION
-============================================ */
+/* Landscape Mode Optimization */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
         height: 100vh;
@@ -2144,17 +2375,20 @@ body {
 
     .slide-content h1 {
         font-size: 28px;
+        font-weight: 900;
         margin-bottom: 10px;
     }
 
     .slide-content p {
         font-size: 14px;
+        font-weight: 500;
         margin-bottom: 12px;
     }
 
     .cta-button {
-        padding: 10px 24px;
+        padding: 11px 28px;
         font-size: 14px;
+        font-weight: 700;
     }
 
     .slider-dots {
@@ -2167,9 +2401,7 @@ body {
     }
 }
 
-/* ============================================
-   ACCESSIBILITY: REDUCED MOTION
-============================================ */
+/* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
@@ -2182,9 +2414,7 @@ body {
     }
 }
 
-/* ============================================
-   HIGH-DENSITY DISPLAYS (RETINA)
-============================================ */
+/* High-Density Displays (Retina) */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .logo-circle img,
     .showcase-img,
@@ -2195,9 +2425,7 @@ body {
     }
 }
 
-/* ============================================
-   PRINT STYLES
-============================================ */
+/* Print Styles */
 @media print {
     .navbar,
     .hamburger,

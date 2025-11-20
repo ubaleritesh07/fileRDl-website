@@ -4,30 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery - RDL Genuine Parts</title>
+    
+    <!-- ✅ PREMIUM GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css" />
     <style>
       .gallery-hero {
         height: 570px;
-
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 70px;
+        margin-top: 80px;
         position: relative;
         overflow: hidden;
       }
 
-      /* Background image added through HTML */
       .gallery-hero .bg-img {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* same as background-size: cover */
-        object-position: center; /* same as background-position: center */
+        object-fit: cover;
+        object-position: center;
         z-index: -2;
       }
+
       .gallery-hero::before {
         content: "";
         position: absolute;
@@ -39,11 +44,25 @@
       .gallery-hero-content {
         text-align: center;
         color: var(--white);
+        max-width: 800px;
+        padding: 20px;
       }
 
       .gallery-hero h1 {
+        font-family: 'Poppins', sans-serif;
         font-size: 56px;
+        font-weight: 900;
         margin-bottom: 20px;
+        letter-spacing: -0.02em;
+        text-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+      }
+
+      .gallery-hero-content p {
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        opacity: 0.95;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
       }
 
       .gallery-section {
@@ -51,7 +70,6 @@
         background: var(--off-white);
       }
 
-      /* New Gallery Unit Styles */
       .gallery-units {
         max-width: 1400px;
         margin: 0 auto;
@@ -115,8 +133,7 @@
       }
 
       @keyframes float {
-        0%,
-        100% {
+        0%, 100% {
           transform: translateY(0);
         }
         50% {
@@ -125,9 +142,10 @@
       }
 
       .gallery-slide-text {
+        font-family: 'Poppins', sans-serif;
         color: var(--white);
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 700;
         text-align: center;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         position: absolute;
@@ -150,14 +168,19 @@
       }
 
       .gallery-content h2 {
+        font-family: 'Poppins', sans-serif;
         font-size: 36px;
+        font-weight: 700;
         color: var(--dark-gray);
         margin-bottom: 20px;
         line-height: 1.3;
+        letter-spacing: -0.01em;
       }
 
       .gallery-content p {
+        font-family: 'Inter', sans-serif;
         font-size: 18px;
+        font-weight: 400;
         color: var(--gray);
         line-height: 1.8;
         margin-bottom: 20px;
@@ -171,27 +194,50 @@
       }
 
       .feature-tag {
+        font-family: 'Inter', sans-serif;
         background: #ffe0e0;
         color: var(--primary-red);
         padding: 10px 20px;
         border-radius: 25px;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 600;
       }
 
-      /* Testimonial Styles with Animation */
+      /* Testimonial Styles */
       .testimonial-section {
         padding: 80px 20px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-red) 0%,
-          var(--dark-red) 100%
-        );
+        background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
         overflow: hidden;
+        position: relative;
+      }
+
+      .testimonial-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            1200px 400px at 10% 0%,
+            rgba(255, 255, 255, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 300px at 90% 100%,
+            rgba(255, 255, 255, 0.08),
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .testimonial-section .container {
+        position: relative;
+        z-index: 1;
       }
 
       .testimonial-section .section-title {
+        font-family: 'Poppins', sans-serif;
         color: var(--white);
+        font-weight: 800;
       }
 
       .testimonial-carousel {
@@ -248,6 +294,7 @@
       }
 
       .quote-icon {
+        font-family: 'Georgia', serif;
         font-size: 60px;
         color: rgba(255, 255, 255, 0.4);
         opacity: 0.5;
@@ -256,7 +303,10 @@
       }
 
       .testimonial-text {
+        font-family: 'Inter', sans-serif;
         color: var(--white);
+        font-size: 15px;
+        font-weight: 400;
         line-height: 1.8;
         margin-bottom: 20px;
         font-style: italic;
@@ -278,107 +328,87 @@
         align-items: center;
         justify-content: center;
         color: var(--primary-red);
-        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
         font-size: 20px;
         flex-shrink: 0;
       }
 
       .author-info h4 {
+        font-family: 'Poppins', sans-serif;
         color: var(--white);
         font-size: 16px;
+        font-weight: 700;
         margin-bottom: 3px;
       }
 
       .author-info p {
+        font-family: 'Inter', sans-serif;
         color: rgba(255, 255, 255, 0.8);
         font-size: 14px;
+        font-weight: 400;
       }
 
-      @media (max-width: 1024px) {
-        .gallery-unit {
-          grid-template-columns: 1fr;
-        }
+      /* =========================================
+         COMPREHENSIVE MOBILE RESPONSIVE DESIGN
+         ========================================= */
 
-        .gallery-unit:nth-child(even) {
-          direction: ltr;
-        }
-
-        .gallery-image-slider {
-          height: 400px;
-        }
-
-        .gallery-content {
-          padding: 40px;
-        }
-
-        .testimonial-row {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
+      @media (max-width: 1200px) {
         .gallery-hero h1 {
-          font-size: 36px;
+          font-size: 50px;
+          font-weight: 900;
         }
 
-        .gallery-image-slider {
-          height: 300px;
-        }
-
-        .gallery-slide-icon {
-          font-size: 80px;
-        }
-
-        .gallery-slide-text {
-          font-size: 18px;
-        }
-
-        .gallery-content {
-          padding: 30px;
+        .gallery-hero-content p {
+          font-size: 19px;
+          font-weight: 500;
         }
 
         .gallery-content h2 {
-          font-size: 28px;
+          font-size: 32px;
+          font-weight: 700;
         }
 
         .gallery-content p {
-          font-size: 16px;
-        }
-
-        .testimonial-row {
-          grid-template-columns: 1fr;
+          font-size: 17px;
+          font-weight: 400;
         }
       }
-      /* =========================================
-   GALLERY PAGE – RESPONSIVE ENHANCEMENTS
-   Breakpoints: 1024, 820, 680, 540, 400
-   ========================================= */
 
-      /* ---------- ≤ 1024px (tablet / small laptop) ---------- */
       @media (max-width: 1024px) {
         .gallery-hero {
           height: 56vh;
           background-position: center 22%;
+          margin-top: 76px;
         }
+
         .gallery-hero h1 {
-          font-size: 40px;
+          font-size: 44px;
+          font-weight: 900;
+        }
+
+        .gallery-hero-content p {
+          font-size: 18px;
+          font-weight: 500;
         }
 
         .gallery-section {
           padding: 60px 18px;
         }
+
         .gallery-units {
           gap: 50px;
         }
 
-        /* Stack each unit (image above, text below) */
         .gallery-unit {
           grid-template-columns: 1fr;
           min-height: 0;
         }
+
         .gallery-unit:nth-child(even) {
           direction: ltr;
         }
+
         .gallery-unit:nth-child(even) > * {
           direction: ltr;
         }
@@ -386,101 +416,186 @@
         .gallery-image-slider {
           height: 360px;
         }
+
         .gallery-content {
           padding: 34px;
         }
 
         .gallery-content h2 {
           font-size: 28px;
+          font-weight: 700;
         }
+
         .gallery-content p {
           font-size: 16px;
+          font-weight: 400;
           line-height: 1.75;
         }
 
         .gallery-features {
           gap: 10px;
         }
+
         .feature-tag {
           font-size: 13px;
+          font-weight: 600;
           padding: 8px 14px;
           border-radius: 20px;
         }
 
-        /* Testimonials: 2 per row */
         .testimonial-section {
           padding: 64px 18px;
-          margin-bottom: 70px;
         }
+
         .testimonial-row {
           grid-template-columns: repeat(2, 1fr);
           gap: 18px;
         }
+
         .testimonial-card {
           padding: 26px;
           border-radius: 12px;
         }
+
         .quote-icon {
           font-size: 44px;
         }
+
         .testimonial-text {
           min-height: 90px;
           font-size: 15px;
+          font-weight: 400;
         }
+
         .author-avatar {
           width: 44px;
           height: 44px;
           font-size: 18px;
+          font-weight: 800;
         }
+
         .author-info h4 {
           font-size: 15px;
+          font-weight: 700;
         }
+
         .author-info p {
           font-size: 13px;
+          font-weight: 400;
         }
       }
 
-      /* ---------- ≤ 820px (large tablets / small foldables) ---------- */
       @media (max-width: 820px) {
         .gallery-hero {
           height: 52vh;
           background-position: center 20%;
         }
+
         .gallery-hero h1 {
-          font-size: 34px;
+          font-size: 38px;
+          font-weight: 900;
         }
+
+        .gallery-hero-content p {
+          font-size: 17px;
+          font-weight: 500;
+        }
+
         .gallery-image-slider {
           height: 320px;
         }
 
         .gallery-slide-text {
           font-size: 16px;
+          font-weight: 700;
           padding: 10px 12px;
           bottom: 16px;
         }
 
-        /* Tighten cards and headings */
         .gallery-content h2 {
           font-size: 26px;
+          font-weight: 700;
         }
+
         .gallery-content p {
           font-size: 15.5px;
+          font-weight: 400;
         }
       }
 
-      /* ---------- ≤ 680px (phones in landscape / small tablets) ---------- */
+      @media (max-width: 768px) {
+        .testimonial-section {
+          overflow: visible;
+        }
+
+        .testimonial-carousel {
+          min-height: 0;
+          height: auto;
+        }
+
+        .testimonial-row {
+          position: static;
+          transform: none !important;
+          opacity: 1 !important;
+          transition: none !important;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .testimonial-row + .testimonial-row {
+          margin-top: 16px;
+        }
+
+        .testimonial-card {
+          margin: 0;
+        }
+
+        .footer {
+          padding: 54px 16px 16px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+        }
+
+        .footer-col h4 {
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 8px;
+        }
+
+        .footer-logo-img {
+          width: 160px;
+          height: 64px;
+        }
+
+        .footer-bottom {
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 1.6;
+        }
+      }
+
       @media (max-width: 680px) {
         .nav-container {
           height: 72px;
         }
+
         .nav-menu a {
           padding: 14px 16px;
           font-size: 15px;
+          font-weight: 600;
         }
 
         .gallery-section {
           padding: 52px 16px;
         }
+
         .gallery-units {
           gap: 36px;
         }
@@ -488,145 +603,222 @@
         .gallery-image-slider {
           height: 280px;
         }
+
         .gallery-slide-icon {
           font-size: 72px;
         }
+
         .gallery-slide-text {
           font-size: 15px;
+          font-weight: 700;
         }
 
         .gallery-content {
           padding: 24px;
         }
+
         .gallery-content h2 {
           font-size: 24px;
+          font-weight: 700;
         }
+
         .gallery-content p {
           font-size: 15px;
+          font-weight: 400;
           line-height: 1.7;
         }
 
         .feature-tag {
           font-size: 12px;
+          font-weight: 600;
           padding: 7px 12px;
         }
 
-        /* Testimonials: 1 per row */
-        .testimonial-row {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
         .testimonial-card {
           padding: 22px;
         }
+
         .quote-icon {
           font-size: 38px;
         }
+
         .testimonial-text {
           min-height: auto;
           font-size: 14.5px;
+          font-weight: 400;
         }
       }
 
-      /* ---------- ≤ 540px (most phones) ---------- */
       @media (max-width: 540px) {
-        /* Hero: shorter, better crop, smaller text */
         .gallery-hero {
           height: 46vh;
           background-position: center 18%;
-        }
-        .gallery-hero h1 {
-          font-size: 28px;
-        }
-        .gallery-hero-content p {
-          font-size: 15px;
+          margin-top: 70px;
         }
 
-        /* Slider height & images */
+        .gallery-hero h1 {
+          font-size: 32px;
+          font-weight: 900;
+        }
+
+        .gallery-hero-content p {
+          font-size: 15px;
+          font-weight: 500;
+        }
+
         .gallery-image-slider {
           height: 240px;
         }
+
         .gallery-slide-image {
           object-position: center;
         }
+
         .gallery-slide-text {
           font-size: 14px;
+          font-weight: 700;
           bottom: 12px;
         }
 
-        /* Unit text sizes */
         .gallery-content {
           padding: 18px;
         }
+
         .gallery-content h2 {
           font-size: 22px;
-        }
-        .gallery-content p {
-          font-size: 14.5px;
+          font-weight: 700;
         }
 
-        /* Feature pills wrap nicely */
+        .gallery-content p {
+          font-size: 14.5px;
+          font-weight: 400;
+        }
+
         .gallery-features {
           gap: 8px;
         }
+
         .feature-tag {
           font-size: 11.5px;
+          font-weight: 600;
           padding: 6px 10px;
           border-radius: 18px;
         }
 
-        /* Testimonial tweaks */
         .testimonial-section {
           padding: 52px 14px;
-          margin-bottom: 54px;
         }
+
         .testimonial-card {
           padding: 18px;
         }
+
         .author-avatar {
           width: 40px;
           height: 40px;
           font-size: 16px;
+          font-weight: 800;
         }
+
         .author-info h4 {
           font-size: 14.5px;
+          font-weight: 700;
         }
+
         .author-info p {
           font-size: 12.5px;
+          font-weight: 400;
         }
       }
 
-      /* ---------- ≤ 400px (small phones) ---------- */
+      @media (max-width: 520px) {
+        .footer {
+          padding: 44px 14px 14px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          text-align: center;
+        }
+
+        .footer-col,
+        .footer-logo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-col h4 {
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+
+        .footer-col ul {
+          padding: 0;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 6px;
+        }
+
+        .company-name {
+          margin-top: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-hero {
+          margin-top: 68px;
+        }
+
+        .gallery-hero h1 {
+          font-size: 28px;
+          font-weight: 900;
+        }
+      }
+
       @media (max-width: 400px) {
         .gallery-hero {
           height: 42vh;
           background-position: center 16%;
         }
+
         .gallery-hero h1 {
           font-size: 24px;
+          font-weight: 900;
         }
+
         .gallery-hero-content p {
           font-size: 14px;
+          font-weight: 500;
         }
 
         .gallery-image-slider {
           height: 210px;
         }
+
         .gallery-slide-text {
           font-size: 13px;
+          font-weight: 700;
           padding: 8px;
           bottom: 10px;
         }
 
         .gallery-content h2 {
           font-size: 20px;
+          font-weight: 700;
         }
+
         .gallery-content p {
           font-size: 14px;
+          font-weight: 400;
         }
 
         .feature-tag {
           font-size: 11px;
+          font-weight: 600;
           padding: 5px 9px;
         }
 
@@ -634,77 +826,23 @@
           padding: 16px;
           border-radius: 10px;
         }
+
         .quote-icon {
           font-size: 34px;
         }
       }
 
-      /* ---------- Footer tidy (matches other pages) ---------- */
-      @media (max-width: 768px) {
-        .footer {
-          padding: 54px 16px 16px;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
-        }
-        .footer-col h4 {
-          font-size: 18px;
-          margin-bottom: 12px;
-        }
-        .footer-col ul li {
-          margin-bottom: 8px;
-        }
-        .footer-logo-img {
-          width: 160px;
-          height: 64px;
-        }
-        .footer-bottom {
-          margin-top: 10px;
-          font-size: 14px;
-          line-height: 1.6;
-        }
-      }
-      @media (max-width: 520px) {
-        .footer {
-          padding: 44px 14px 14px;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 18px;
-          text-align: center;
-        }
-        .footer-col,
-        .footer-logo {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .footer-col h4 {
-          font-size: 16px;
-          margin-bottom: 8px;
-        }
-        .footer-col ul {
-          padding: 0;
-        }
-        .footer-col ul li {
-          margin-bottom: 6px;
-        }
-        .company-name {
-          margin-top: 8px;
-        }
-      }
       @media (max-width: 380px) {
         .footer-logo-img {
           width: 140px;
           height: 56px;
         }
+
         .footer-bottom {
           font-size: 13px;
         }
       }
 
-      /* ---------- Motion & iOS smoothness ---------- */
       @media (prefers-reduced-motion: reduce) {
         * {
           animation: none !important;
@@ -712,41 +850,10 @@
           scroll-behavior: auto !important;
         }
       }
+
       @supports (-webkit-touch-callout: none) {
-        /* iOS sometimes struggles with heavy backgrounds—keep it smooth */
         .gallery-hero {
           background-attachment: scroll;
-        }
-      }
-      /* --- Testimonials: let rows flow on mobile --- */
-      @media (max-width: 768px) {
-        /* let the section show full height */
-        .testimonial-section {
-          overflow: visible;
-        }
-
-        /* allow container to grow with content */
-        .testimonial-carousel {
-          min-height: 0;
-          height: auto;
-        }
-
-        /* stop absolute positioning so rows stack naturally */
-        .testimonial-row {
-          position: static;
-          transform: none !important;
-          opacity: 1 !important;
-          transition: none !important;
-        }
-
-        /* keep nice spacing between the two rows */
-        .testimonial-row + .testimonial-row {
-          margin-top: 16px;
-        }
-
-        /* optional: slightly tighter cards */
-        .testimonial-card {
-          margin: 0;
         }
       }
     </style>
@@ -781,7 +888,6 @@
 
     <!-- Hero Section -->
     <section class="gallery-hero">
-      <!-- Background image moved from CSS to HTML -->
       <img
         src="/images/marketyard/1st.jpg"
         class="bg-img"
@@ -797,7 +903,7 @@
     <!-- Gallery Section -->
     <section class="gallery-section">
       <div class="container">
-        <h2 class="section-title">Product Showcase</h2>
+        <h2 class="section-title" style="font-family: 'Poppins', sans-serif; font-weight: 800;">Product Showcase</h2>
 
         <div class="gallery-units">
           <!-- Unit 1: Head Light Visor -->
@@ -1136,7 +1242,7 @@
             <div class="testimonial-card">
               <div class="quote-icon">"</div>
               <p class="testimonial-text">
-                Commends RDL’s timely deliveries, excellent fitting, and
+                Commends RDL's timely deliveries, excellent fitting, and
                 OEM-like finish trusted by local mechanics.
               </p>
               <div class="testimonial-author">
@@ -1169,7 +1275,7 @@
             <div class="testimonial-card">
               <div class="quote-icon">"</div>
               <p class="testimonial-text">
-                Notes RDL’s organized transport system, perfect fit and finish,
+                Notes RDL's organized transport system, perfect fit and finish,
                 and timely supply that keeps retailers satisfied.
               </p>
               <div class="testimonial-author">
@@ -1184,7 +1290,7 @@
             <div class="testimonial-card">
               <div class="quote-icon">"</div>
               <p class="testimonial-text">
-                Values RDL’s long-term consistency, durability, and transparent
+                Values RDL's long-term consistency, durability, and transparent
                 dealing that make every order reliable
               </p>
               <div class="testimonial-author">
@@ -1199,7 +1305,7 @@
             <div class="testimonial-card">
               <div class="quote-icon">"</div>
               <p class="testimonial-text">
-                Highlights fast delivery through RDL’s own vehicles and
+                Highlights fast delivery through RDL's own vehicles and
                 unmatched finish trusted by mechanics.
               </p>
               <div class="testimonial-author">
